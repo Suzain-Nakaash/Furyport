@@ -26,6 +26,36 @@
             --font-sans: 'Space Grotesk', sans-serif;
         }
 
+        [data-theme="light"] {
+            --bg-color: #e6efff;
+            --accent-color: #3b4de0;
+            --muted-color: #7b8ac9;
+            --grid-color: rgba(59, 77, 224, 0.08);
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-thumb {
+            background: rgba(59, 77, 224, 0.4);
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+            background: rgba(59, 77, 224, 0.7);
+        }
+
+        [data-theme="light"] .gallery-section {
+            background: rgba(230, 239, 255, 0.85);
+            border-top: 1px solid rgba(59, 77, 224, 0.15);
+            border-bottom: 1px solid rgba(59, 77, 224, 0.15);
+        }
+
+        [data-theme="light"] .slide-item {
+            background: #d4e3fb;
+            border: 1px solid rgba(59, 77, 224, 0.2);
+        }
+
+        [data-theme="light"] .logo-img {
+            filter: brightness(0.2) sepia(1) hue-rotate(200deg) saturate(3);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -240,7 +270,7 @@
         .slider-track {
             display: flex;
             width: calc(320px * 12);
-            animation: scrollLoop 30s linear infinite;
+            animation: scrollLoop 40s linear infinite;
         }
 
         .slider-track:hover {
@@ -249,7 +279,7 @@
 
         .slide-item {
             width: 320px;
-            height: 420px;
+            height: 180px;
             margin: 0;
             background: #111;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -270,25 +300,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.7;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .slide-item:hover .slide-artwork-placeholder {
             transform: scale(1.08);
-            opacity: 1;
-        }
-
-        .slide-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 5px 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            letter-spacing: 1px;
         }
 
         /* About & Info Section */
@@ -436,6 +452,9 @@
             <a href="#works" class="interactive">Works</a>
             <a href="#about" class="interactive">About</a>
             <a href="https://www.instagram.com/furyxzia" target="_blank" class="interactive">Instagram ↗</a>
+            <button id="theme-toggle" class="interactive"
+                style="background: transparent; color: var(--accent-color); border: 1px solid var(--accent-color); padding: 5px 12px; border-radius: 20px; font-family: var(--font-sans); text-transform: uppercase; font-size: 0.75rem; margin-left: 30px; transition: all 0.3s; cursor: none;">Light
+                Theme</button>
         </nav>
     </header>
 
@@ -452,97 +471,79 @@
             <div class="slider-track">
                 <div class="slide-item interactive">
                     <img src="assets/Comp_1_00011.png" alt="Art 01" class="slide-artwork-placeholder">
-                    <div class="slide-caption">PROJECT_01 // OMNI</div>
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Comp_1_00069.png" alt="Art 02" class="slide-artwork-placeholder"
-                        style="filter: hue-rotate(90deg) invert(1);">
-                    <div class="slide-caption">PROJECT_02 // KINETIC</div>
+                    <img src="assets/Comp_1_00069.png" alt="Art 02" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Comp_1_00087.png" alt="Art 03" class="slide-artwork-placeholder"
-                        style="filter: contrast(150%);">
-                    <div class="slide-caption">PROJECT_03 // FRACTAL</div>
+                    <img src="assets/Comp_1_00087.png" alt="Art 03" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Comp_1_00278.png" alt="Art 04" class="slide-artwork-placeholder"
-                        style="filter: brightness(0.5) sepia(1);">
-                    <div class="slide-caption">PROJECT_04 // STRUCTURE</div>
+                    <img src="assets/Comp_1_00278.png" alt="Art 04" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Live_as_you_should_00085.png" alt="Art 05" class="slide-artwork-placeholder"
-                        style="filter: grayscale(100%);">
-                    <div class="slide-caption">PROJECT_05 // VOID</div>
+                    <img src="assets/Live_as_you_should_00085.png" alt="Art 05" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/frame_00089.png" alt="Art 06" class="slide-artwork-placeholder"
-                        style="filter: invert(0.8);">
-                    <div class="slide-caption">PROJECT_06 // APEX</div>
+                    <img src="assets/frame_00089.png" alt="Art 06" class="slide-artwork-placeholder">
                 </div>
 
                 <div class="slide-item interactive">
                     <img src="assets/Comp_1_00011.png" alt="Art 01" class="slide-artwork-placeholder">
-                    <div class="slide-caption">PROJECT_01 // OMNI</div>
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Comp_1_00069.png" alt="Art 02" class="slide-artwork-placeholder"
-                        style="filter: hue-rotate(90deg) invert(1);">
-                    <div class="slide-caption">PROJECT_02 // KINETIC</div>
+                    <img src="assets/Comp_1_00069.png" alt="Art 02" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Comp_1_00087.png" alt="Art 03" class="slide-artwork-placeholder"
-                        style="filter: contrast(150%);">
-                    <div class="slide-caption">PROJECT_03 // FRACTAL</div>
+                    <img src="assets/Comp_1_00087.png" alt="Art 03" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Comp_1_00278.png" alt="Art 04" class="slide-artwork-placeholder"
-                        style="filter: brightness(0.5) sepia(1);">
-                    <div class="slide-caption">PROJECT_04 // STRUCTURE</div>
+                    <img src="assets/Comp_1_00278.png" alt="Art 04" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/Live_as_you_should_00085.png" alt="Art 05" class="slide-artwork-placeholder"
-                        style="filter: grayscale(100%);">
-                    <div class="slide-caption">PROJECT_05 // VOID</div>
+                    <img src="assets/Live_as_you_should_00085.png" alt="Art 05" class="slide-artwork-placeholder">
                 </div>
                 <div class="slide-item interactive">
-                    <img src="assets/frame_00089.png" alt="Art 06" class="slide-artwork-placeholder"
-                        style="filter: invert(0.8);">
-                    <div class="slide-caption">PROJECT_06 // APEX</div>
+                    <img src="assets/frame_00089.png" alt="Art 06" class="slide-artwork-placeholder">
                 </div>
             </div>
         </div>
     </section>
 
     <div id="about" style="position: relative; width: 100%; overflow: hidden;">
-        <video src="assets/SD mat2.mp4" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.25; pointer-events: none;"></video>
+        <video src="assets/SD mat2.mp4" autoplay loop muted playsinline
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.25; pointer-events: none;"></video>
         <section class="info-section" style="position: relative; z-index: 1;">
-        <div>
-            <h2 class="bio-title"><span style="font-family: 'Honoka Mincho', serif; font-weight: normal;">世界に対するビジョン</span> // <br>FURYXZIA</h2>
-        </div>
-        <div>
-            <p class="bio-text">
-                Furyxzia is an avant-garde digital space and abstract 3D asset architect specializing in high-fidelity
-                algorithmic structures, dark surrealism elements, and complex computational aesthetics. Pushing a
-                signature look built on complex crystalline spikes, sharp geometry, and structural balance, the work
-                challenges contemporary presentation norms.
-            </p>
-            <ul class="meta-list">
-                <li>
-                    <span class="meta-label">Focus</span>
-                    <span>Abstract 3D Art & Asset Design</span>
-                </li>
-                <li>
-                    <span class="meta-label">Est. Timeline</span>
-                    <span>2026 // Next-gen Digital Architecture</span>
-                </li>
-                <li>
-                    <span class="meta-label">Source Network</span>
-                    <span><a href="https://www.instagram.com/furyxzia" target="_blank" style="color:#fff;"
-                            class="interactive">@furyxzia</a></span>
-                </li>
-            </ul>
-        </div>
-    </section>
+            <div>
+                <h2 class="bio-title"><span
+                        style="font-family: 'Honoka Mincho', serif; font-weight: normal;">世界に対するビジョン</span> //
+                    <br>FURYXZIA</h2>
+            </div>
+            <div>
+                <p class="bio-text">
+                    Furyxzia is an avant-garde digital space and abstract 3D asset architect specializing in
+                    high-fidelity
+                    algorithmic structures, dark surrealism elements, and complex computational aesthetics. Pushing a
+                    signature look built on complex crystalline spikes, sharp geometry, and structural balance, the work
+                    challenges contemporary presentation norms.
+                </p>
+                <ul class="meta-list">
+                    <li>
+                        <span class="meta-label">Focus</span>
+                        <span>Abstract 3D Art & Asset Design</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">Est. Timeline</span>
+                        <span>2026 // Next-gen Digital Architecture</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">Source Network</span>
+                        <span><a href="https://www.instagram.com/furyxzia" target="_blank" style="color:#fff;"
+                                class="interactive">@furyxzia</a></span>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -569,13 +570,35 @@
             element.addEventListener('mouseenter', () => {
                 cursor.style.width = '55px';
                 cursor.style.height = '55px';
-                cursor.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                cursor.style.backgroundColor = document.documentElement.getAttribute('data-theme') === 'light' ? 'rgba(59, 77, 224, 0.1)' : 'rgba(255, 255, 255, 0.08)';
             });
             element.addEventListener('mouseleave', () => {
                 cursor.style.width = '20px';
                 cursor.style.height = '20px';
                 cursor.style.backgroundColor = 'transparent';
             });
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                themeToggle.textContent = 'Light Theme';
+                themeToggle.style.backgroundColor = 'transparent';
+                themeToggle.style.color = 'var(--accent-color)';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggle.textContent = 'Dark Theme';
+            }
+        });
+
+        themeToggle.addEventListener('mouseenter', () => {
+            themeToggle.style.backgroundColor = 'var(--accent-color)';
+            themeToggle.style.color = 'var(--bg-color)';
+        });
+        themeToggle.addEventListener('mouseleave', () => {
+            themeToggle.style.backgroundColor = 'transparent';
+            themeToggle.style.color = 'var(--accent-color)';
         });
     </script>
 </body>
