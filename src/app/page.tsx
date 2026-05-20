@@ -88,14 +88,14 @@ export default function Home() {
 
       <header className={isScrolledDown ? 'header-hidden' : ''}>
         <div className="nav-container">
+          <div className="nav-logo interactive">
+            <img src="/assets/Furyxzia_logo_00000-depositphotos-bgremover.png" alt="Furyxzia Logo" className="logo-img" />
+          </div>
+
           <div className="nav-left">
             <a href="#works" className="nav-btn interactive" style={{ marginLeft: 0 }}>Works</a>
             <a href="#video" className="nav-btn interactive">Video</a>
             <a href="#about" className="nav-btn interactive">About</a>
-          </div>
-
-          <div className="nav-center interactive">
-            <img src="/assets/Furyxzia_logo_00000-depositphotos-bgremover.png" alt="Furyxzia Logo" className="logo-img" />
           </div>
 
           <div className="nav-right">
@@ -308,7 +308,7 @@ export default function Home() {
       <div id="about" style={{ position: 'relative', width: '100%', paddingBottom: '120px', display: 'flex', justifyContent: 'center' }}>
         <section className="glass-panel" style={{ width: '100%', maxWidth: '1400px', margin: '0 5%', position: 'relative', overflow: 'hidden', border: '1px solid rgba(128,128,128,0.2)', display: 'grid', gridTemplateColumns: '1fr 1.2fr', background: 'var(--bg-color)', minHeight: '700px' }}>
           
-          <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.1, pointerEvents: 'none', borderRadius: '0' }}></video>
+          <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.3, pointerEvents: 'none', borderRadius: '0' }}></video>
           
           {/* Tech/HUD decorations */}
           <div style={{ position: 'absolute', top: '30px', left: '30px', width: '15px', height: '15px', borderTop: '1px solid var(--accent-color)', borderLeft: '1px solid var(--accent-color)', zIndex: 1 }}></div>
@@ -326,10 +326,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Large Vertical Text overlay (like THE SHOW ref) */}
-          <div style={{ position: 'absolute', top: '50%', left: '40%', transform: 'translate(-50%, -50%)', zIndex: 1, pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: 0.03 }}>
-            <div style={{ fontSize: '35vw', lineHeight: '0.8', margin: 0, fontFamily: 'var(--font-display)', letterSpacing: '-15px', color: 'var(--accent-color)', fontWeight: 'bold' }}>F/X</div>
-          </div>
 
           {/* Left Column: Traditional / Japanese Vertical layout */}
           <div className="about-left-col" style={{ position: 'relative', zIndex: 2, padding: '120px 50px 50px 60px', display: 'flex', flexDirection: 'column', borderRight: '1px solid rgba(128,128,128,0.1)' }}>

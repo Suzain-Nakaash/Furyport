@@ -39,7 +39,7 @@
   --font-sans: 'Helvetica', sans-serif;
   --font-hero: 'Helvetica', sans-serif;
   --gradient-bg: linear-gradient(135deg, #1a1a1a, #000000);
-  --contact-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --contact-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
   --contact-border: rgba(255, 255, 255, 0.15);
 }
 
@@ -51,8 +51,8 @@
   --gradient-bg: #f9f9fc;
   --brand-purple: #7952ff;
   --shadow-ambient: rgba(121, 82, 255, 0.04);
-  --contact-bg: linear-gradient(135deg, rgba(121, 82, 255, 0.15) 0%, rgba(121, 82, 255, 0.02) 100%);
-  --contact-border: rgba(121, 82, 255, 0.3);
+  --contact-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+  --contact-border: rgba(128, 128, 128, 0.2);
 }
 
 [data-theme="light"] body {
@@ -271,11 +271,11 @@ header.header-hidden .nav-right {
   justify-content: flex-end;
 }
 
-.nav-center {
+.nav-logo {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex: 1;
+  flex: 0 0 auto;
+  margin-right: 30px;
 }
 
 /* Glass cards */

@@ -156,11 +156,11 @@ export default function ContactTerminal() {
                 <div ref={item.ref} style={{ padding: '12px 18px', color: 'var(--accent-color)', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>{item.val}</div>
               </div>
             ))}
-            <div style={{ display: 'grid', gridTemplateColumns: '90px 1fr 90px 1fr', background: 'rgba(128,128,128,0.03)', fontSize: '12px', alignItems: 'center' }}>
-              <div style={{ padding: '10px 14px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', borderRight: '1px solid rgba(128,128,128,0.1)', textTransform: 'uppercase', fontWeight: 'bold' }}>Followers</div>
-              <div ref={followersRef} style={{ padding: '10px 14px', color: 'var(--accent-color)', fontFamily: 'var(--font-sans)', fontWeight: 500, borderRight: '1px solid rgba(128,128,128,0.1)' }}>{activeData.followers}</div>
-              <div style={{ padding: '10px 14px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', borderRight: '1px solid rgba(128,128,128,0.1)', textTransform: 'uppercase', fontWeight: 'bold' }}>Following</div>
-              <div ref={followingRef} style={{ padding: '10px 14px', color: 'var(--accent-color)', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>{activeData.following}</div>
+            <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr 120px 1fr', background: 'rgba(128,128,128,0.03)', fontSize: '13px', alignItems: 'center' }}>
+              <div style={{ padding: '12px 18px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', borderRight: '1px solid rgba(128,128,128,0.1)', textTransform: 'uppercase', fontWeight: 'bold' }}>Followers</div>
+              <div ref={followersRef} style={{ padding: '12px 18px', color: 'var(--accent-color)', fontFamily: 'var(--font-sans)', fontWeight: 500, borderRight: '1px solid rgba(128,128,128,0.1)' }}>{activeData.followers}</div>
+              <div style={{ padding: '12px 18px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', borderRight: '1px solid rgba(128,128,128,0.1)', textTransform: 'uppercase', fontWeight: 'bold' }}>Following</div>
+              <div ref={followingRef} style={{ padding: '12px 18px', color: 'var(--accent-color)', fontFamily: 'var(--font-sans)', fontWeight: 500 }}>{activeData.following}</div>
             </div>
           </div>
 
