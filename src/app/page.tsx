@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import CinematicBackground from '../components/CinematicBackground';
+import ContactTerminal from '../components/ContactTerminal';
 
 export default function Home() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -214,15 +215,7 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="contact-section" id="contact" style={{ padding: '0 5% 100px 5%', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-        <div className="glass-panel" style={{ maxWidth: '800px', margin: '0 auto', padding: '80px 40px' }}>
-          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--font-display)', marginBottom: '20px', textTransform: 'uppercase' }}>Let's Collaborate</h2>
-          <p style={{ color: 'var(--muted-color)', marginBottom: '40px', fontSize: '1.2rem' }}>Ready to elevate your visual identity with premium video editing and 3D art?</p>
-          <a href="mailto:hello@furyxzia.com" className="interactive btn-contact" style={{ display: 'inline-block', padding: '18px 45px', fontSize: '1.1rem', textDecoration: 'none', transition: 'all 0.3s', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
-            Get In Touch
-          </a>
-        </div>
-      </section>
+      <ContactTerminal />
 
       <footer style={{ background: 'transparent', borderTop: 'none', paddingBottom: '40px' }}>
         <div>&copy; 2026 FURYXZIA. All Rights Reserved.</div>
