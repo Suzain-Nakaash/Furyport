@@ -39,6 +39,8 @@
   --font-sans: 'Helvetica', sans-serif;
   --font-hero: 'Helvetica', sans-serif;
   --gradient-bg: linear-gradient(135deg, #1a1a1a, #000000);
+  --contact-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --contact-border: rgba(255, 255, 255, 0.15);
 }
 
 [data-theme="light"] {
@@ -49,6 +51,8 @@
   --gradient-bg: #f9f9fc;
   --brand-purple: #7952ff;
   --shadow-ambient: rgba(121, 82, 255, 0.04);
+  --contact-bg: linear-gradient(135deg, rgba(121, 82, 255, 0.15) 0%, rgba(121, 82, 255, 0.02) 100%);
+  --contact-border: rgba(121, 82, 255, 0.3);
 }
 
 [data-theme="light"] body {
@@ -224,6 +228,15 @@ header {
   -webkit-backdrop-filter: blur(24px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  transition: background 0.8s cubic-bezier(0.22, 1, 0.36, 1), border 0.8s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.8s cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+header.header-hidden {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 [data-theme="light"] header {
@@ -244,6 +257,14 @@ header {
   display: flex;
   align-items: center;
   flex: 1;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+}
+
+header.header-hidden .nav-left, 
+header.header-hidden .nav-right {
+  transform: translateY(-80px);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-right {
@@ -629,3 +650,18 @@ footer {
   }
 }
 
+@media (max-width: 900px) {
+  #about section {
+    grid-template-columns: 1fr !important;
+  }
+  .about-left-col, .about-right-col {
+    padding: 60px 40px !important;
+  }
+  .about-left-col {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(128,128,128,0.1) !important;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+}

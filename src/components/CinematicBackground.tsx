@@ -43,12 +43,35 @@ export default function CinematicBackground() {
       blending: THREE.AdditiveBlending
     });
 
-    const coreGeo = new THREE.IcosahedronGeometry(2, 1);
-    const coreMat = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
-      wireframe: true,
+    const textureLoader = new THREE.TextureLoader();
+    const logoTexture = textureLoader.load('/assets/Furyxzia_logo_00000-depositphotos-bgremover.png');
+
+    const coreGeo = new THREE.PlaneGeometry(6, 6);
+    const coreMat = new THREE.ShaderMaterial({
+      uniforms: {
+        tDiffuse: { value: logoTexture },
+        opacity: { value: 0.15 }
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+      `,
+      fragmentShader: `
+        uniform sampler2D tDiffuse;
+        uniform float opacity;
+        varying vec2 vUv;
+        void main() {
+          vec4 texColor = texture2D(tDiffuse, vUv);
+          // Invert RGB from black to white, multiply by texture alpha
+          vec3 invertedColor = vec3(1.0) - texColor.rgb;
+          gl_FragColor = vec4(invertedColor, texColor.a * opacity);
+        }
+      `,
       transparent: true,
-      opacity: 0.08
+      depthWrite: false
     });
     
     const coreMesh = new THREE.Mesh(coreGeo, coreMat);
@@ -146,11 +169,10 @@ export default function CinematicBackground() {
 
       // Dark mode animations
       if (coreMesh.visible) {
-        coreMesh.rotation.y = elapsedTime * 0.05;
-        coreMesh.rotation.x = elapsedTime * 0.02;
+        coreMesh.rotation.z = Math.sin(elapsedTime * 0.2) * 0.1; // Gentle sway instead of full rotation
+        coreMesh.position.y = Math.sin(elapsedTime * 0.5) * 0.2 - (targetScrollY * 1.5); // Floating effect
+
         particles.rotation.y = elapsedTime * 0.01;
-        
-        coreMesh.position.y = -(targetScrollY * 1.5);
       }
 
       // Light mode animations (Fluid Wave)
