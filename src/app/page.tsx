@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import CinematicBackground from '../components/CinematicBackground';
 
 export default function Home() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -28,19 +29,15 @@ export default function Home() {
     document.addEventListener('mousemove', handleMouseMove);
 
     const interactives = document.querySelectorAll('.interactive');
-    
+
     const handleMouseEnter = () => {
-      cursor.style.width = '55px';
-      cursor.style.height = '55px';
-      cursor.style.backgroundColor = document.documentElement.getAttribute('data-theme') === 'light' 
-        ? 'rgba(59, 77, 224, 0.1)' 
-        : 'rgba(255, 255, 255, 0.08)';
+      cursor.classList.add('hovered');
+      cursorDot.classList.add('hovered');
     };
 
     const handleMouseLeave = () => {
-      cursor.style.width = '20px';
-      cursor.style.height = '20px';
-      cursor.style.backgroundColor = 'transparent';
+      cursor.classList.remove('hovered');
+      cursorDot.classList.remove('hovered');
     };
 
     interactives.forEach(element => {
@@ -72,42 +69,27 @@ export default function Home() {
       <div className="custom-cursor" ref={cursorRef}></div>
       <div className="custom-cursor-dot" ref={cursorDotRef}></div>
 
-      <div className="grid-bg"></div>
+      <CinematicBackground />
 
       <header>
         <div className="nav-container">
           <div className="nav-left">
-            <a href="#works" className="interactive" style={{ marginLeft: 0 }}>Works</a>
-            <a href="#video" className="interactive">Video</a>
-            <a href="#about" className="interactive">About</a>
+            <a href="#works" className="nav-btn interactive" style={{ marginLeft: 0 }}>Works</a>
+            <a href="#video" className="nav-btn interactive">Video</a>
+            <a href="#about" className="nav-btn interactive">About</a>
           </div>
-          
+
           <div className="nav-center interactive">
             <img src="/assets/Furyxzia_logo_00000-depositphotos-bgremover.png" alt="Furyxzia Logo" className="logo-img" />
           </div>
 
           <div className="nav-right">
-            <a href="#contact" className="interactive">Contact</a>
-            <a href="https://www.instagram.com/furyxzia" target="_blank" rel="noopener noreferrer" className="interactive">Instagram ↗</a>
-            <button 
-              id="theme-toggle" 
-              className="interactive glass-panel"
+            <a href="#contact" className="nav-btn interactive">Contact</a>
+            <a href="https://www.instagram.com/furyxzia" target="_blank" rel="noopener noreferrer" className="nav-btn interactive">Instagram ↗</a>
+            <button
+              id="theme-toggle"
+              className="nav-btn interactive"
               onClick={toggleTheme}
-              onMouseEnter={() => setIsThemeHovered(true)}
-              onMouseLeave={() => setIsThemeHovered(false)}
-              style={{ 
-                background: isThemeHovered ? 'var(--accent-color)' : 'rgba(255, 255, 255, 0.1)', 
-                color: isThemeHovered ? 'var(--bg-color)' : 'var(--accent-color)', 
-                border: '1px solid var(--accent-color)', 
-                padding: '8px 16px', 
-                borderRadius: '30px', 
-                fontFamily: 'var(--font-sans)', 
-                textTransform: 'uppercase', 
-                fontSize: '0.75rem', 
-                marginLeft: '30px', 
-                transition: 'all 0.3s', 
-                cursor: 'none' 
-              }}
             >
               {theme === 'light' ? 'Dark Theme' : 'Light Theme'}
             </button>
@@ -117,28 +99,23 @@ export default function Home() {
 
       <section className="hero">
         <div className="particles-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
-          <img src="/assets/Comp_1_00011.png" alt="Particle" style={{ position: 'absolute', top: '20%', left: '15%', width: '120px', opacity: 0.4, borderRadius: '15px', filter: 'blur(4px)', animation: 'floatParticle 8s ease-in-out infinite' }} />
-          <img src="/assets/Comp_1_00069.png" alt="Particle" style={{ position: 'absolute', top: '65%', right: '10%', width: '180px', opacity: 0.3, borderRadius: '20px', filter: 'blur(5px)', animation: 'floatParticle 10s ease-in-out infinite reverse' }} />
-          <img src="/assets/Live_as_you_should_00085.png" alt="Particle" style={{ position: 'absolute', top: '80%', left: '20%', width: '90px', opacity: 0.5, borderRadius: '12px', filter: 'blur(3px)', animation: 'floatParticle 7s ease-in-out infinite' }} />
-          <img src="/assets/frame_00089.png" alt="Particle" style={{ position: 'absolute', top: '25%', right: '20%', width: '140px', opacity: 0.4, borderRadius: '18px', filter: 'blur(4px)', animation: 'floatParticle 9s ease-in-out infinite 2s' }} />
-          <style dangerouslySetInnerHTML={{__html: `
+          <img src="/assets/Comp_1_00011.png" alt="Particle" style={{ position: 'absolute', top: '20%', left: '15%', width: '120px', opacity: 0.4, filter: 'blur(4px)', animation: 'floatParticle 8s ease-in-out infinite' }} />
+          <img src="/assets/Comp_1_00069.png" alt="Particle" style={{ position: 'absolute', top: '65%', right: '10%', width: '180px', opacity: 0.3, filter: 'blur(5px)', animation: 'floatParticle 10s ease-in-out infinite reverse' }} />
+          <img src="/assets/Live_as_you_should_00085.png" alt="Particle" style={{ position: 'absolute', top: '80%', left: '20%', width: '90px', opacity: 0.5, filter: 'blur(3px)', animation: 'floatParticle 7s ease-in-out infinite' }} />
+          <img src="/assets/frame_00089.png" alt="Particle" style={{ position: 'absolute', top: '25%', right: '20%', width: '140px', opacity: 0.4, filter: 'blur(4px)', animation: 'floatParticle 9s ease-in-out infinite 2s' }} />
+          <style dangerouslySetInnerHTML={{
+            __html: `
             @keyframes floatParticle {
               0%, 100% { transform: translateY(0) rotate(0deg); }
               50% { transform: translateY(-40px) rotate(15deg); }
             }
           `}} />
         </div>
-        <h1 style={{ position: 'relative', zIndex: 1, textShadow: theme === 'light' ? '0 4px 30px rgba(0,51,255,0.4)' : '0 4px 30px rgba(255,255,255,0.2)' }}>
-          ELEVATING<br />VISUAL NARRATIVES
-        </h1>
-        <p className="glass-panel" style={{ position: 'relative', zIndex: 1, padding: '15px 30px', display: 'inline-block', marginTop: '20px' }}>
-          Cinematic Video Editing & Digital Art Portfolio // 2026
-        </p>
         <div className="scroll-indicator" style={{ zIndex: 1 }}>Scroll down</div>
       </section>
 
       <section className="gallery-section" id="works">
-        <h2 className="section-title glass-panel" style={{ display: 'inline-block', padding: '10px 30px', borderRadius: '30px', marginLeft: '5%', marginBottom: '0' }}>Abstract 3D Art</h2>
+
         <div className="slider-wrapper">
           <div className="slider-track">
             <div className="slide-item interactive">
@@ -183,35 +160,36 @@ export default function Home() {
       </section>
 
       <section className="video-section" id="video" style={{ padding: '100px 5%', position: 'relative', zIndex: 1 }}>
-        <h2 className="section-title glass-panel" style={{ display: 'inline-block', padding: '10px 30px', borderRadius: '30px', marginBottom: '40px' }}>Video Production</h2>
+        <h2 className="section-title glass-panel" style={{ display: 'inline-block', padding: '10px 30px', marginBottom: '40px' }}>Video Production</h2>
         <div className="video-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
-          <div className="video-card glass-panel interactive" style={{ padding: '20px', borderRadius: '20px', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-             <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ width: '100%', borderRadius: '10px', objectFit: 'cover', height: '220px' }}></video>
-             <h3 style={{ marginTop: '20px', fontSize: '1.4rem', fontFamily: 'var(--font-display)' }}>Project Alpha</h3>
-             <p style={{ color: 'var(--muted-color)', fontSize: '1rem', marginTop: '5px' }}>Commercial Editing // VFX</p>
+          <div className="video-card glass-panel interactive" style={{ padding: '20px', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+            <video src="/assets/PB 1.mp4" autoPlay loop muted playsInline style={{ width: '100%', borderRadius: '0', objectFit: 'cover', height: '220px' }}></video>
+            <h3 style={{ marginTop: '20px', fontSize: '1.4rem', fontFamily: 'var(--font-display)' }}>Project Alpha</h3>
+            <p style={{ color: 'var(--muted-color)', fontSize: '1rem', marginTop: '5px' }}>Commercial Editing VFX</p>
           </div>
-          <div className="video-card glass-panel interactive" style={{ padding: '20px', borderRadius: '20px', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-             <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ width: '100%', borderRadius: '10px', objectFit: 'cover', height: '220px' }}></video>
-             <h3 style={{ marginTop: '20px', fontSize: '1.4rem', fontFamily: 'var(--font-display)' }}>Neon Dreams</h3>
-             <p style={{ color: 'var(--muted-color)', fontSize: '1rem', marginTop: '5px' }}>Music Video // Color Grading</p>
+          <div className="video-card glass-panel interactive" style={{ padding: '20px', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+            <video src="/assets/PB 2.mp4" autoPlay loop muted playsInline style={{ width: '100%', borderRadius: '0', objectFit: 'cover', height: '220px' }}></video>
+            <h3 style={{ marginTop: '20px', fontSize: '1.4rem', fontFamily: 'var(--font-display)' }}>Neon Dreams</h3>
+            <p style={{ color: 'var(--muted-color)', fontSize: '1rem', marginTop: '5px' }}>Music Video Color Grading</p>
           </div>
-          <div className="video-card glass-panel interactive" style={{ padding: '20px', borderRadius: '20px', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-             <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ width: '100%', borderRadius: '10px', objectFit: 'cover', height: '220px' }}></video>
-             <h3 style={{ marginTop: '20px', fontSize: '1.4rem', fontFamily: 'var(--font-display)' }}>Synthetic Life</h3>
-             <p style={{ color: 'var(--muted-color)', fontSize: '1rem', marginTop: '5px' }}>3D Animation // Sound Design</p>
+          <div className="video-card glass-panel interactive" style={{ padding: '20px', transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+            <video src="/assets/PB 3.mp4" autoPlay loop muted playsInline style={{ width: '100%', borderRadius: '0', objectFit: 'cover', height: '220px' }}></video>
+            <h3 style={{ marginTop: '20px', fontSize: '1.4rem', fontFamily: 'var(--font-display)' }}>Synthetic Life</h3>
+            <p style={{ color: 'var(--muted-color)', fontSize: '1rem', marginTop: '5px' }}>3D Animation Sound Design</p>
           </div>
         </div>
       </section>
 
-      <div id="about" style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-        <section className="info-section glass-panel" style={{ margin: '0 5% 100px 5%', maxWidth: '1400px', borderRadius: '40px', padding: '60px' }}>
-          <div>
+      <div id="about" style={{ position: 'relative', width: '100%' }}>
+        <section className="info-section glass-panel" style={{ margin: '0 5% 100px 5%', maxWidth: '1400px', padding: '60px', position: 'relative', zIndex: 1, overflow: 'hidden' }}>
+          <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.25, pointerEvents: 'none', borderRadius: '0' }}></video>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <h2 className="bio-title">
-              <span style={{ fontFamily: '"Honoka Mincho", serif', fontWeight: 'normal' }}>世界に対するビジョン</span> //
+              <span style={{ fontFamily: '"Honoka Mincho", serif', fontWeight: 'normal', fontStyle: 'normal' }}>世界に対するビジョン</span>
               <br />FURYXZIA
             </h2>
           </div>
-          <div>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <p className="bio-text">
               Furyxzia is a multidisciplinary digital studio specializing in
               high-end cinematic video editing, visual effects, and complex 3D aesthetics. Pushing a
@@ -225,7 +203,7 @@ export default function Home() {
               </li>
               <li>
                 <span className="meta-label">Est. Timeline</span>
-                <span>2026 // Next-gen Narratives</span>
+                <span>2026 Next-gen Narratives</span>
               </li>
               <li>
                 <span className="meta-label">Source Network</span>
@@ -237,10 +215,10 @@ export default function Home() {
       </div>
 
       <section className="contact-section" id="contact" style={{ padding: '0 5% 100px 5%', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-        <div className="glass-panel" style={{ maxWidth: '800px', margin: '0 auto', padding: '80px 40px', borderRadius: '40px' }}>
+        <div className="glass-panel" style={{ maxWidth: '800px', margin: '0 auto', padding: '80px 40px' }}>
           <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--font-display)', marginBottom: '20px', textTransform: 'uppercase' }}>Let's Collaborate</h2>
           <p style={{ color: 'var(--muted-color)', marginBottom: '40px', fontSize: '1.2rem' }}>Ready to elevate your visual identity with premium video editing and 3D art?</p>
-          <a href="mailto:hello@furyxzia.com" className="interactive glass-panel" style={{ display: 'inline-block', padding: '18px 45px', fontSize: '1.1rem', textDecoration: 'none', color: 'var(--accent-color)', borderRadius: '30px', transition: 'all 0.3s', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent-color)'; e.currentTarget.style.color = 'var(--bg-color)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'; e.currentTarget.style.color = 'var(--accent-color)'; }}>
+          <a href="mailto:hello@furyxzia.com" className="interactive btn-contact" style={{ display: 'inline-block', padding: '18px 45px', fontSize: '1.1rem', textDecoration: 'none', transition: 'all 0.3s', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
             Get In Touch
           </a>
         </div>
