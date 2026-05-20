@@ -185,7 +185,7 @@ export default function Home() {
           <video src="/assets/SD mat2.mp4" autoPlay loop muted playsInline style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, opacity: 0.25, pointerEvents: 'none', borderRadius: '0' }}></video>
           <div style={{ position: 'relative', zIndex: 1 }}>
             <h2 className="bio-title">
-              <span style={{ fontFamily: '"Honoka Mincho", serif', fontWeight: 'normal', fontStyle: 'normal' }}>世界に対するビジョン</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontWeight: 'normal', fontStyle: 'normal' }}>世界に対するビジョン</span>
               <br />FURYXZIA
             </h2>
           </div>

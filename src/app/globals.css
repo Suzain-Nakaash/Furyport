@@ -3,18 +3,31 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Cagier';
-  src: url('/assets/Cagier.otf') format('opentype');
+  font-family: 'Helvetica';
+  src: url('/assets/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Magire';
-  src: url('/assets/Magire.otf') format('opentype');
+  font-family: 'Helvetica';
+  src: url('/assets/Helvetica-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Honoka Mincho';
-  src: local('Honoka Mincho'), url('/assets/font_1_honokamin.ttf') format('truetype');
+  font-family: 'Helvetica';
+  src: url('/assets/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/assets/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
 }
 
 :root {
@@ -22,9 +35,9 @@
   --accent-color: #ffffff;
   --muted-color: #666666;
   --grid-color: rgba(255, 255, 255, 0.03);
-  --font-display: 'Magire', sans-serif;
-  --font-sans: 'Magire', sans-serif;
-  --font-hero: 'Cagier', sans-serif;
+  --font-display: 'Helvetica', sans-serif;
+  --font-sans: 'Helvetica', sans-serif;
+  --font-hero: 'Helvetica', sans-serif;
   --gradient-bg: linear-gradient(135deg, #1a1a1a, #000000);
 }
 
