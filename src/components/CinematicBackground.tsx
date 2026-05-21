@@ -121,6 +121,7 @@ export default function CinematicBackground() {
         coreMat.uniforms.uIsLight.value = 1.0;
         coreMat.uniforms.opacity.value = 0.40;
         
+        particles.visible = true;
         particlesMat.color.setHex(0x7952ff); // Theme purple particles
         particlesMat.opacity = 0.18;
         particlesMat.size = 0.03;
@@ -130,6 +131,7 @@ export default function CinematicBackground() {
         coreMat.uniforms.uIsLight.value = 0.0;
         coreMat.uniforms.opacity.value = 0.15;
         
+        particles.visible = false;
         particlesMat.color.setHex(0x9b66ff); // Luminous electric neon-violet
         particlesMat.opacity = 0.65;
         particlesMat.size = 0.055;

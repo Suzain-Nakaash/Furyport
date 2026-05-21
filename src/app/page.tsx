@@ -46,23 +46,11 @@ export default function Home() {
             display: 'flex', 
             flexDirection: 'column', 
             justifyContent: 'space-between',
-            border: '1px solid rgba(121, 82, 255, 0.22)',
-            boxShadow: 'inset 0 0 0 1px rgba(121, 82, 255, 0.05), 0 0 30px rgba(121, 82, 255, 0.03)',
+            border: 'none',
             padding: '20px',
-            backgroundColor: 'rgba(4, 3, 7, 0.15)'
+            backgroundColor: 'transparent'
           }}
         >
-          {/* Sci-Fi Enhanced Target Corners & Multi-Layered Detached Accents */}
-          <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '16px', height: '16px', borderLeft: '2.5px solid var(--brand-purple)', borderTop: '2.5px solid var(--brand-purple)' }} />
-          <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '16px', height: '16px', borderRight: '2.5px solid var(--brand-purple)', borderTop: '2.5px solid var(--brand-purple)' }} />
-          <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '16px', height: '16px', borderLeft: '2.5px solid var(--brand-purple)', borderBottom: '2.5px solid var(--brand-purple)' }} />
-          <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '16px', height: '16px', borderRight: '2.5px solid var(--brand-purple)', borderBottom: '2.5px solid var(--brand-purple)' }} />
-
-          {/* Thin Inner Detached Brackets */}
-          <div style={{ position: 'absolute', top: '5px', left: '5px', width: '8px', height: '8px', borderLeft: '1px solid rgba(255,255,255,0.2)', borderTop: '1px solid rgba(255,255,255,0.2)' }} />
-          <div style={{ position: 'absolute', top: '5px', right: '5px', width: '8px', height: '8px', borderRight: '1px solid rgba(255,255,255,0.2)', borderTop: '1px solid rgba(255,255,255,0.2)' }} />
-          <div style={{ position: 'absolute', bottom: '5px', left: '5px', width: '8px', height: '8px', borderLeft: '1px solid rgba(255,255,255,0.2)', borderBottom: '1px solid rgba(255,255,255,0.2)' }} />
-          <div style={{ position: 'absolute', bottom: '5px', right: '5px', width: '8px', height: '8px', borderRight: '1px solid rgba(255,255,255,0.2)', borderBottom: '1px solid rgba(255,255,255,0.2)' }} />
 
           {/* Top HUD Console Row (Reference 1 Top Panel) */}
           <div style={{ 
@@ -232,6 +220,7 @@ export default function Home() {
                   letterSpacing: '12px',
                   lineHeight: 1.1,
                   margin: 0,
+                  color: 'var(--accent-color)',
                   textShadow: '0 0 35px rgba(121, 82, 255, 0.15)',
                   position: 'relative',
                   display: 'inline-block'
@@ -407,8 +396,8 @@ export default function Home() {
 
       {/* 2. Works Preview (Slider & Portal Link) */}
       <section className="gallery-section" id="works">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: '0 5%', marginBottom: '20px' }}>
-          <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 5%', marginBottom: '30px', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--brand-purple)', letterSpacing: '4px', textTransform: 'uppercase' }}>
               EXHIBITION PREVIEW
             </span>
@@ -480,10 +469,12 @@ export default function Home() {
               display: 'flex', 
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '380px'
+              minHeight: '380px',
+              textAlign: 'center',
+              alignItems: 'center'
             }}
           >
-            <div style={{ position: 'relative', borderLeft: '2px solid var(--brand-purple)', paddingLeft: '15px' }}>
+            <div style={{ position: 'relative', borderBottom: '2px solid var(--brand-purple)', paddingBottom: '15px' }}>
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase' }}>
                 CREATOR DOSSIER
               </span>
@@ -494,7 +485,7 @@ export default function Home() {
             <p style={{ fontSize: '14px', color: 'var(--muted-color)', lineHeight: 1.7, fontFamily: 'var(--font-sans)', margin: '30px 0' }}>
               Pushing a signature aesthetic structured on sharp geometry, light dispersion, and balanced composition. Learn about the Tokyo visual studio, academic origins, and core visions.
             </p>
-            <div>
+            <div style={{ width: '100%' }}>
               <Link href="/about" className="nav-btn interactive" style={{ margin: 0, width: '100%', textAlign: 'center', fontWeight: 'bold' }}>
                 EXPLORE BIOGRAPHY ↗
               </Link>
@@ -512,10 +503,12 @@ export default function Home() {
               display: 'flex', 
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '380px'
+              minHeight: '380px',
+              textAlign: 'center',
+              alignItems: 'center'
             }}
           >
-            <div style={{ position: 'relative', borderLeft: '2px solid var(--brand-purple)', paddingLeft: '15px' }}>
+            <div style={{ position: 'relative', borderBottom: '2px solid var(--brand-purple)', paddingBottom: '15px' }}>
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase' }}>
                 MEDIA LAB
               </span>
@@ -526,7 +519,7 @@ export default function Home() {
             <p style={{ fontSize: '14px', color: 'var(--muted-color)', lineHeight: 1.7, fontFamily: 'var(--font-sans)', margin: '30px 0' }}>
               Showcasing cinematic direction, commercial advertising edits, experimental volumetric lighting, and high-frequency audio integrations in the sound studio.
             </p>
-            <div>
+            <div style={{ width: '100%' }}>
               <Link href="/videos" className="nav-btn interactive" style={{ margin: 0, width: '100%', textAlign: 'center', fontWeight: 'bold' }}>
                 ENTER MEDIA HALL ↗
               </Link>
@@ -544,10 +537,12 @@ export default function Home() {
               display: 'flex', 
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '380px'
+              minHeight: '380px',
+              textAlign: 'center',
+              alignItems: 'center'
             }}
           >
-            <div style={{ position: 'relative', borderLeft: '2px solid var(--brand-purple)', paddingLeft: '15px' }}>
+            <div style={{ position: 'relative', borderBottom: '2px solid var(--brand-purple)', paddingBottom: '15px' }}>
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase' }}>
                 SYSTEM NODE
               </span>
@@ -558,7 +553,7 @@ export default function Home() {
             <p style={{ fontSize: '14px', color: 'var(--muted-color)', lineHeight: 1.7, fontFamily: 'var(--font-sans)', margin: '30px 0' }}>
               Initiate a secure connection to collaborate. Commissions are open for high-end cinematic edits, 3D composits, visual effects direction, or motion graphics projects.
             </p>
-            <div>
+            <div style={{ width: '100%' }}>
               <Link href="/contact" className="nav-btn interactive" style={{ margin: 0, width: '100%', textAlign: 'center', fontWeight: 'bold' }}>
                 INITIATE CONTACT ↗
               </Link>
