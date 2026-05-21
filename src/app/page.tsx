@@ -237,7 +237,7 @@ export default function Home() {
                   display: 'inline-block'
                 }}
               >
-                沙上鼓動
+                幽玄虚像
               </h1>
 
               {/* Distressed Calligraphic Sweep Underline SVG (Reference 2 Brush Stroke) */}
@@ -281,7 +281,7 @@ export default function Home() {
                   textShadow: '0 2px 4px rgba(0,0,0,0.5)'
                 }}
               >
-                On the sand the sound of a heartbeat
+                Fragments of emotion rendered in light
               </p>
               
               {/* Small high-tech visual sub-label (Reference 4 Sport of adrenaline vibe) */}
