@@ -76,14 +76,19 @@ export default function WorkPage() {
   return (
     <div style={{ padding: '160px 0 120px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       
-      {/* Page Title */}
-      <div style={{ width: '100%', maxWidth: '1400px', borderTop: '1px solid rgba(128,128,128,0.3)', borderBottom: '1px solid rgba(128,128,128,0.3)', padding: '30px 0', marginBottom: '60px', textAlign: 'center', margin: '0 5%' }}>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '8px', margin: 0 }}>PORTFOLIO WORKS</h2>
+      {/* Clean, Elegant Heading Structure */}
+      <div style={{ width: '100%', maxWidth: '1400px', padding: '0 5%', marginBottom: '60px', alignSelf: 'center' }}>
+        <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--brand-purple)', letterSpacing: '4px', textTransform: 'uppercase', display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+          CREATIVE PORTFOLIO
+        </span>
+        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '-1.5px', margin: 0, fontWeight: 'bold', lineHeight: 0.9 }}>
+          SELECTED WORKS
+        </h1>
       </div>
 
-      {/* Grid Layout Container */}
+      {/* Grid Layout Container (Reduced grid minimum to 280px for smaller, tighter cards) */}
       <div style={{ width: '100%', maxWidth: '1400px', padding: '0 5%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '40px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
           
           {projectsList.map((project) => (
             <div 
@@ -101,8 +106,8 @@ export default function WorkPage() {
               }}
             >
               
-              {/* Image Frame with hover transition handled by class wrapper */}
-              <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden', borderBottom: '1px solid rgba(128,128,128,0.15)' }}>
+              {/* Image Frame (Reduced height to 170px for smaller presentation) */}
+              <div style={{ position: 'relative', width: '100%', height: '170px', overflow: 'hidden', borderBottom: '1px solid rgba(128,128,128,0.15)' }}>
                 <img 
                   src={project.img} 
                   alt={project.title} 
@@ -115,33 +120,35 @@ export default function WorkPage() {
                     borderRadius: '0'
                   }} 
                 />
+                
+                {/* Removals: ID numbers and 2026 tags are deleted from image frame for perfect clean presentation */}
               </div>
 
-              {/* Information Panel */}
-              <div style={{ padding: '30px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '8px' }}>
+              {/* Information Panel (More compact padding) */}
+              <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '6px' }}>
                   {project.category}
                 </span>
                 
-                <h3 style={{ fontSize: '1.6rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', marginBottom: '15px', letterSpacing: '-0.5px' }}>
+                <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', marginBottom: '10px', letterSpacing: '-0.5px', fontWeight: 'bold' }}>
                   {project.title}
                 </h3>
                 
-                <p style={{ fontSize: '13px', color: 'var(--muted-color)', lineHeight: 1.6, fontFamily: 'var(--font-sans)', marginBottom: '25px', flexGrow: 1 }}>
+                <p style={{ fontSize: '12.5px', color: 'var(--muted-color)', lineHeight: 1.5, fontFamily: 'var(--font-sans)', marginBottom: '20px', flexGrow: 1 }}>
                   {project.details}
                 </p>
 
                 {/* Tech Tags Container */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', borderTop: '1px dashed rgba(128,128,128,0.2)', paddingTop: '20px' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', borderTop: '1px dashed rgba(128,128,128,0.15)', paddingTop: '15px' }}>
                   {project.techTags.map((tag, i) => (
                     <span 
                       key={i}
                       style={{ 
-                        fontSize: '9px', 
+                        fontSize: '8.5px', 
                         fontFamily: 'var(--font-sans)', 
                         color: 'var(--brand-purple)', 
-                        border: '1px solid rgba(121, 82, 255, 0.3)', 
-                        padding: '3px 8px', 
+                        border: '1px solid rgba(121, 82, 255, 0.2)', 
+                        padding: '2px 6px', 
                         letterSpacing: '1px',
                         textTransform: 'uppercase'
                       }}
@@ -158,16 +165,15 @@ export default function WorkPage() {
         </div>
       </div>
 
-      {/* Embedded CSS rules for hover effects */}
       <style dangerouslySetInnerHTML={{
         __html: `
         .glass-panel.interactive:hover {
           border-color: var(--brand-purple) !important;
-          transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(121, 82, 255, 0.08);
+          transform: translateY(-4px);
+          box-shadow: 0 15px 30px rgba(121, 82, 255, 0.05);
         }
         .glass-panel.interactive:hover .project-card-image {
-          transform: scale(1.08);
+          transform: scale(1.06);
         }
       `}} />
 

@@ -10,6 +10,16 @@ export default function ContactPage() {
   return (
     <div style={{ padding: '160px 0 120px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       
+      {/* Clean, Elegant Heading Structure */}
+      <div style={{ width: '100%', maxWidth: '1400px', padding: '0 5%', marginBottom: '60px', alignSelf: 'center' }}>
+        <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--brand-purple)', letterSpacing: '4px', textTransform: 'uppercase', display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+          GET IN TOUCH
+        </span>
+        <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '-1.5px', margin: 0, fontWeight: 'bold', lineHeight: 0.9 }}>
+          CONTACT
+        </h1>
+      </div>
+
       {/* Main Terminal Section */}
       <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto' }}>
         <ContactTerminal />
@@ -34,11 +44,11 @@ export default function ContactPage() {
           {/* Form Header */}
           <div style={{ position: 'relative', borderBottom: '1px dashed rgba(128,128,128,0.2)', paddingBottom: '20px' }}>
             <div style={{ position: 'absolute', top: '0', left: '-20px', width: '2px', height: '24px', background: 'var(--brand-purple)' }}></div>
-            <h3 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold' }}>
-              SEND AN INQUIRY
+            <h3 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '2px' }}>
+              SEND A MESSAGE
             </h3>
-            <p style={{ fontSize: '11px', color: 'var(--muted-color)', marginTop: '5px', fontFamily: 'var(--font-sans)', letterSpacing: '1px' }}>
-              RECRUITMENT / COMMISSIONS / DESIGN INQUIRIES
+            <p style={{ fontSize: '12px', color: 'var(--muted-color)', marginTop: '5px', fontFamily: 'var(--font-sans)', letterSpacing: '1px' }}>
+              For commissions, collaborations, and general inquiries.
             </p>
           </div>
 
@@ -48,13 +58,13 @@ export default function ContactPage() {
             {/* Input Name */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <label style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold' }}>
-                Sender Name [Identity]
+                Name
               </label>
               <input 
                 type="text" 
                 required
                 className="form-input interactive"
-                placeholder="e.g. DARSHAN ARSID"
+                placeholder="e.g. Darshan Arsid"
                 style={{
                   padding: '14px 20px',
                   background: 'rgba(128, 128, 128, 0.04)',
@@ -73,7 +83,7 @@ export default function ContactPage() {
             {/* Input Email */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <label style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold' }}>
-                Sender Contact [Email Node]
+                Email Address
               </label>
               <input 
                 type="email" 
@@ -98,13 +108,13 @@ export default function ContactPage() {
             {/* Input Subject (Spans full width) */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', gridColumn: '1 / span 2' }}>
               <label style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold' }}>
-                Inquiry Classification [Subject]
+                Subject
               </label>
               <input 
                 type="text" 
                 required
                 className="form-input interactive"
-                placeholder="e.g. FILM EDITING COMMISSION / BRAND ARTWORK / VFX INQUIRY"
+                placeholder="e.g. Project Inquiry / Collaboration"
                 style={{
                   padding: '14px 20px',
                   background: 'rgba(128, 128, 128, 0.04)',
@@ -123,13 +133,13 @@ export default function ContactPage() {
             {/* Input Message (Spans full width) */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', gridColumn: '1 / span 2' }}>
               <label style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold' }}>
-                Inquiry Details [Message Payload]
+                Message
               </label>
               <textarea 
                 rows={6}
                 required
                 className="form-input interactive"
-                placeholder="Type details of your project here. Include timeline constraints, visual direction inspiration, budget brackets..."
+                placeholder="Describe your project, timeline, budget, and design requirements..."
                 style={{
                   padding: '18px 20px',
                   background: 'rgba(128, 128, 128, 0.04)',
@@ -167,7 +177,7 @@ export default function ContactPage() {
                   gap: '12px'
                 }}
               >
-                <span>TRANSMIT INQUIRY payload</span>
+                <span>SEND MESSAGE</span>
                 <svg viewBox="0 0 24 24" style={{ width: '16px', height: '16px', fill: 'currentColor' }}>
                   <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                 </svg>
