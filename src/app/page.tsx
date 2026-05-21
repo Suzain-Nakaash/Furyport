@@ -9,7 +9,15 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero Landing Section */}
-      <section className="hero">
+      <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+        
+        {/* Distress Grain & Subtle Noise (Reference 2 calligraphic grit texture) */}
+        <div className="hud-distress-grain" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }} />
+        
+        {/* Slow Technical Scanning Laser Line */}
+        <div className="laser-scanner-line" style={{ zIndex: 1 }} />
+
+        {/* Ambient floating design particles */}
         <div className="particles-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
           <img src="/assets/Comp_1_00011.png" alt="Particle" style={{ position: 'absolute', top: '20%', left: '15%', width: '120px', opacity: 0.4, filter: 'blur(4px)', animation: 'floatParticle 8s ease-in-out infinite' }} />
           <img src="/assets/Comp_1_00069.png" alt="Particle" style={{ position: 'absolute', top: '65%', right: '10%', width: '180px', opacity: 0.3, filter: 'blur(5px)', animation: 'floatParticle 10s ease-in-out infinite reverse' }} />
@@ -24,115 +32,377 @@ export default function Home() {
           `}} />
         </div>
         
-        {/* HUD Frame */}
-        <div className="hero-hud-frame" style={{ position: 'absolute', top: '120px', bottom: '80px', left: '5%', right: '5%', pointerEvents: 'none', zIndex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', overflow: 'hidden' }}>
-          
-          {/* Top Row */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderTop: '1px solid rgba(128,128,128,0.2)', paddingTop: '15px' }}>
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-               <div style={{ width: '4px', height: '4px', background: 'var(--brand-purple)', marginTop: '8px' }}></div>
-               <div>
-                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(16px, 2vw, 24px)', letterSpacing: '6px', color: 'var(--accent-color)', fontWeight: 'bold', textTransform: 'uppercase' }}>DARSHAN ARSID</div>
-                 <div style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', letterSpacing: '4px', color: 'var(--muted-color)', textTransform: 'uppercase', marginTop: '6px' }}>Visual Artist // Director</div>
-               </div>
+        {/* Main Neo-Tokyo Cyber-Japanese HUD Console Framework (Reference 1, 3, & 4) */}
+        <div 
+          className="hero-hud-frame" 
+          style={{ 
+            position: 'absolute', 
+            top: '110px', 
+            bottom: '70px', 
+            left: '4%', 
+            right: '4%', 
+            pointerEvents: 'none', 
+            zIndex: 2, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            justifyContent: 'space-between',
+            border: '1px solid rgba(121, 82, 255, 0.22)',
+            boxShadow: 'inset 0 0 0 1px rgba(121, 82, 255, 0.05), 0 0 30px rgba(121, 82, 255, 0.03)',
+            padding: '20px',
+            backgroundColor: 'rgba(4, 3, 7, 0.15)'
+          }}
+        >
+          {/* Sci-Fi Enhanced Target Corners & Multi-Layered Detached Accents */}
+          <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '16px', height: '16px', borderLeft: '2.5px solid var(--brand-purple)', borderTop: '2.5px solid var(--brand-purple)' }} />
+          <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '16px', height: '16px', borderRight: '2.5px solid var(--brand-purple)', borderTop: '2.5px solid var(--brand-purple)' }} />
+          <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '16px', height: '16px', borderLeft: '2.5px solid var(--brand-purple)', borderBottom: '2.5px solid var(--brand-purple)' }} />
+          <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '16px', height: '16px', borderRight: '2.5px solid var(--brand-purple)', borderBottom: '2.5px solid var(--brand-purple)' }} />
+
+          {/* Thin Inner Detached Brackets */}
+          <div style={{ position: 'absolute', top: '5px', left: '5px', width: '8px', height: '8px', borderLeft: '1px solid rgba(255,255,255,0.2)', borderTop: '1px solid rgba(255,255,255,0.2)' }} />
+          <div style={{ position: 'absolute', top: '5px', right: '5px', width: '8px', height: '8px', borderRight: '1px solid rgba(255,255,255,0.2)', borderTop: '1px solid rgba(255,255,255,0.2)' }} />
+          <div style={{ position: 'absolute', bottom: '5px', left: '5px', width: '8px', height: '8px', borderLeft: '1px solid rgba(255,255,255,0.2)', borderBottom: '1px solid rgba(255,255,255,0.2)' }} />
+          <div style={{ position: 'absolute', bottom: '5px', right: '5px', width: '8px', height: '8px', borderRight: '1px solid rgba(255,255,255,0.2)', borderBottom: '1px solid rgba(255,255,255,0.2)' }} />
+
+          {/* Top HUD Console Row (Reference 1 Top Panel) */}
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            width: '100%', 
+            borderBottom: '1px solid rgba(128, 128, 128, 0.15)',
+            paddingBottom: '14px',
+            position: 'relative'
+          }}>
+            {/* Top Left: _B42 Technical Tray with Crossed X's */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <span style={{ fontSize: '11px', fontFamily: 'monospace', fontWeight: 'bold', color: 'var(--accent-color)', letterSpacing: '2px' }}>_B42</span>
+              
+              {/* Mini bracket with + (Reference 1, top left) */}
+              <div style={{ border: '1px solid var(--brand-purple)', padding: '2px 6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '8px', color: 'var(--brand-purple)', fontFamily: 'monospace', fontWeight: 'bold' }}>
+                +
+              </div>
+              
+              {/* Crossed X segment (Reference 1) */}
+              <div style={{ fontSize: '11px', fontFamily: 'monospace', letterSpacing: '4px', color: 'var(--accent-color)', fontWeight: 'bold', opacity: 0.8 }} className="hide-on-mobile">
+                ✕✕✕✕
+              </div>
+              
+              {/* Small horizontal barcode block */}
+              <div className="tech-barcode-horiz hide-on-mobile" style={{ width: '100px', height: '12px' }} />
             </div>
-            
-            <div className="hide-on-mobile" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
-              <div style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', letterSpacing: '3px', color: 'var(--muted-color)', textTransform: 'uppercase' }}>AR/17 — 20/.0610</div>
-              <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-                <div style={{ width: '40px', height: '1px', background: 'var(--accent-color)' }}></div>
-                <div style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '4px', color: 'var(--accent-color)' }}>AGE: 21</div>
+
+            {/* Top Center details (Image 4 poster style) */}
+            <div className="hide-on-mobile" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+              <div style={{ fontSize: '8.5px', fontFamily: 'monospace', letterSpacing: '2px', color: 'var(--muted-color)' }}>
+                NEOTOKYO // SYSTEM_NODE_ACTIVE // ARS/26.04
+              </div>
+              <div style={{ width: '6px', height: '6px', backgroundColor: 'var(--brand-purple)', borderRadius: '50%' }} />
+            </div>
+
+            {/* Top Right: Page index & brackets */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              {/* Chevron indicators */}
+              <span style={{ fontSize: '9px', fontFamily: 'monospace', letterSpacing: '1px', color: 'var(--brand-purple)' }}>&gt;&gt;&gt;&gt;</span>
+              
+              {/* Diagonal circles symbol ⊘ (Reference 1) */}
+              <span style={{ fontSize: '12px', fontFamily: 'monospace', color: 'var(--accent-color)' }}>⊘</span>
+              
+              {/* Checkerboard segment (Reference 1) */}
+              <div className="tech-checkerboard hide-on-mobile" style={{ width: '45px', height: '12px' }} />
+              
+              {/* Bracketed index */}
+              <div style={{ border: '1px solid rgba(128,128,128,0.25)', padding: '2px 8px', fontSize: '9.5px', fontFamily: 'monospace', color: 'var(--accent-color)' }}>
+                PAGE / 001
               </div>
             </div>
           </div>
 
-          {/* Center Area (Grid & Typography) */}
-          <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '40px 0' }}>
+          {/* Left HUD Vertical Border Column (Reference 1 Left side) */}
+          <div className="hide-on-mobile" style={{ 
+            position: 'absolute', 
+            left: '20px', 
+            top: '70px', 
+            bottom: '70px', 
+            width: '30px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            padding: '20px 0'
+          }}>
+            {/* Tech tag B42 */}
+            <div style={{ transform: 'rotate(-90deg)', fontSize: '8px', fontFamily: 'monospace', color: 'var(--muted-color)', letterSpacing: '2px', whiteSpace: 'nowrap' }}>
+              _B42_SYSTEM_LOG
+            </div>
             
-            {/* Massive Faint Background Logo (Light Theme Only) */}
-            <img 
-              src="/assets/Furyxzia_logo_00000-depositphotos-bgremover.png" 
-              alt="Furyxzia Background Logo" 
-              style={{ 
-                position: 'absolute', 
-                top: '50%', 
-                left: '50%', 
-                transform: 'translate(-50%, -50%)', 
-                width: 'clamp(250px, 40vw, 800px)', 
-                opacity: 0.15, 
-                objectFit: 'contain', 
-                filter: 'none',
-                display: theme === 'dark' ? 'none' : 'block',
-                WebkitMaskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)',
-                maskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 90%)'
-              }} 
-            />
+            {/* Plus marker in brackets */}
+            <div style={{ fontSize: '9px', fontFamily: 'monospace', color: 'var(--brand-purple)' }}>[ + ]</div>
+            
+            {/* Checker stripes (Reference 1 stripes) */}
+            <div className="tech-barcode-vert" style={{ width: '8px', height: '110px' }} />
+            
+            {/* Crossed X indicators (Reference 1) */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 'bold', color: 'var(--accent-color)', opacity: 0.8 }}>
+              <div>✕</div>
+              <div>✕</div>
+            </div>
+            
+            {/* Curved dashed reticle (Reference 1, bottom left) */}
+            <svg width="24" height="24" viewBox="0 0 100 100" style={{ color: 'var(--brand-purple)', opacity: 0.55 }}>
+              <path d="M 10 50 A 40 40 0 0 0 50 90" fill="none" stroke="currentColor" strokeWidth="3" strokeDasharray="8 8" />
+            </svg>
+          </div>
 
-            {/* Huge Vertical Japanese Text */}
-            <div className="hide-on-mobile" style={{ position: 'absolute', left: '2%', top: '50%', transform: 'translateY(-50%)', display: 'flex', gap: '30px' }}>
-              <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.2rem, 2vw, 2.5rem)', color: 'var(--accent-color)', letterSpacing: '15px', fontWeight: 300 }}>
+          {/* Right HUD Vertical Border Column (Reference 1 Right side) */}
+          <div className="hide-on-mobile" style={{ 
+            position: 'absolute', 
+            right: '20px', 
+            top: '70px', 
+            bottom: '70px', 
+            width: '35px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            padding: '20px 0'
+          }}>
+            {/* Diamond column ◆◆◆ */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', color: 'var(--accent-color)', fontSize: '9px' }}>
+              <div>◆</div>
+              <div>◆</div>
+              <div>◆</div>
+              <div>◆</div>
+            </div>
+            
+            {/* Vertical Scroll telemetry bar (Reference 1 middle right) */}
+            <div style={{ width: '4px', height: '100px', background: 'rgba(128,128,128,0.15)', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '30%', left: 0, width: '100%', height: '20px', background: 'var(--brand-purple)' }} />
+            </div>
+
+            {/* Checkerboard vertical bar */}
+            <div className="tech-checkerboard" style={{ width: '10px', height: '50px' }} />
+
+            {/* Technical scale ticks */}
+            <div className="tech-barcode-dense-vert" style={{ width: '6px', height: '90px' }} />
+
+            {/* Heart Outline with Crosshair (Reference 1 Bottom Right - WyHXnR Signature!) */}
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'var(--brand-purple)', opacity: 0.8 }}>
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              <line x1="12" y1="5" x2="12" y2="12" strokeWidth="1" strokeDasharray="1 1" />
+              <line x1="8" y1="8.5" x2="16" y2="8.5" strokeWidth="1" strokeDasharray="1 1" />
+            </svg>
+          </div>
+
+          {/* Center Area (Grid & Neo-Tokyo calligraphic masterpiece) */}
+          <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '30px 0' }}>
+            
+            {/* Left side vertical telemetry column */}
+            <div className="hide-on-mobile" style={{ position: 'absolute', left: '6%', top: '50%', transform: 'translateY(-50%)', display: 'flex', gap: '30px', borderLeft: '1px solid rgba(121, 82, 255, 0.15)', paddingLeft: '24px' }}>
+              {/* Kanji Calligraphy block */}
+              <div className="telemetry-vertical-text" style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 'clamp(1rem, 1.8vw, 2.2rem)', color: 'var(--accent-color)', letterSpacing: '14px', fontWeight: 900 }}>
                 夏の夜道と冬の海
               </div>
-              <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'var(--muted-color)', letterSpacing: '8px', paddingTop: '60px' }}>
+              <div className="telemetry-vertical-text" style={{ fontFamily: 'var(--font-sans)', fontSize: '9.5px', color: 'var(--muted-color)', letterSpacing: '6px', paddingTop: '40px', fontWeight: 'bold' }}>
                 BURIAL OF BLACK SARANA
               </div>
             </div>
 
-            {/* Giant Center typography */}
-            <div className="hide-on-mobile" style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
-                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 'bold', color: 'var(--accent-color)', lineHeight: 0.8, letterSpacing: '-2px' }}>D</div>
-                 <div style={{ width: '1px', height: '60px', background: 'var(--accent-color)', opacity: 0.3 }}></div>
-                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 'bold', color: 'var(--accent-color)', lineHeight: 0.8, letterSpacing: '-2px' }}>H</div>
-                 <div style={{ width: '1px', height: '60px', background: 'var(--accent-color)', opacity: 0.3 }}></div>
-                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 'bold', color: 'var(--accent-color)', lineHeight: 0.8, letterSpacing: '-2px' }}>U</div>
-                 <div style={{ width: '1px', height: '60px', background: 'var(--accent-color)', opacity: 0.3 }}></div>
-                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 'bold', color: 'var(--accent-color)', lineHeight: 0.8, letterSpacing: '-2px' }}>2</div>
-                 <div style={{ width: '1px', height: '60px', background: 'var(--accent-color)', opacity: 0.3 }}></div>
-                 <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(3rem, 6vw, 6rem)', fontWeight: 'bold', color: 'var(--accent-color)', lineHeight: 0.8, letterSpacing: '-2px' }}>6</div>
-              </div>
-              <div style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', letterSpacing: '12px', color: 'var(--brand-purple)', textTransform: 'uppercase', paddingLeft: '12px' }}>
-                C I N E M A T I C S
+            {/* Centerpiece: Hybrid Neo-Tokyo Cyber-Japanese Typography (Reference 2) */}
+            <div style={{ 
+              position: 'relative', 
+              zIndex: 5, 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              textAlign: 'center',
+              padding: '0 40px'
+            }}>
+              
+
+
+              {/* Main Calligraphic Japanese Title (Reference 2) */}
+              <h1 
+                className="sajou-brush-sweep"
+                style={{ 
+                  fontSize: 'clamp(3rem, 7.5vw, 6.6rem)', 
+                  fontFamily: '"Noto Serif JP", "Georgia", serif', 
+                  fontWeight: 900, 
+                  letterSpacing: '12px',
+                  lineHeight: 1.1,
+                  margin: 0,
+                  textShadow: '0 0 35px rgba(121, 82, 255, 0.15)',
+                  position: 'relative',
+                  display: 'inline-block'
+                }}
+              >
+                沙上鼓動
+              </h1>
+
+              {/* Distressed Calligraphic Sweep Underline SVG (Reference 2 Brush Stroke) */}
+              <svg 
+                width="100%" 
+                height="30" 
+                viewBox="0 0 500 30" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ 
+                  marginTop: '-5px', 
+                  color: 'var(--brand-purple)',
+                  opacity: 0.85,
+                  maxWidth: '460px'
+                }}
+              >
+                {/* Master brush path sweep */}
+                <path 
+                  d="M10 15 C120 4, 380 28, 490 15 C390 24, 110 0, 10 15 Z" 
+                  fill="currentColor" 
+                />
+                {/* Secondary thin structural trace line (Reference 2 style) */}
+                <path 
+                  d="M40 17 C160 8, 340 22, 460 17" 
+                  stroke="var(--accent-color)" 
+                  strokeWidth="0.75" 
+                  opacity="0.4"
+                />
+              </svg>
+
+              {/* Elegant Handwritten Cursive Translation (Reference 2 Subtitle) */}
+              <p 
+                style={{ 
+                  fontSize: 'clamp(14px, 2vw, 19px)', 
+                  fontFamily: '"Satisfy", "Caveat", "Brush Script MT", cursive',
+                  color: 'var(--muted-color)', 
+                  margin: '10px 0 0 0',
+                  letterSpacing: '1px',
+                  fontWeight: 400,
+                  opacity: 0.9,
+                  textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+                }}
+              >
+                On the sand the sound of a heartbeat
+              </p>
+              
+              {/* Small high-tech visual sub-label (Reference 4 Sport of adrenaline vibe) */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginTop: '30px' }}>
+                <div style={{ width: '40px', height: '1px', background: 'rgba(128,128,128,0.2)' }} />
+                <span style={{ fontSize: '9px', fontFamily: 'monospace', letterSpacing: '4px', color: 'var(--brand-purple)', textTransform: 'uppercase', fontWeight: 'bold' }}>
+                  NEO_CINEMATIC_STUDIO
+                </span>
+                <div style={{ width: '40px', height: '1px', background: 'rgba(128,128,128,0.2)' }} />
               </div>
             </div>
 
-            {/* Right side floating list */}
-            <div className="hide-on-mobile" style={{ position: 'absolute', right: '2%', top: '50%', transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', gap: '40px' }}>
+            {/* Right side floating project list (Reference 4 poster lists) */}
+            <div className="hide-on-mobile" style={{ position: 'absolute', right: '6%', top: '50%', transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', gap: '35px', borderRight: '1px solid rgba(121, 82, 255, 0.15)', paddingRight: '24px', alignItems: 'flex-end' }}>
               {[
                 { num: '01', jp: 'ブラックサラナの埋葬', en: 'TOKYO, JAPAN' },
                 { num: '02', jp: '午前４時のバカンス', en: 'CG & VFX EXPERIMENTALIST' },
               ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 'bold', color: 'var(--accent-color)', letterSpacing: '-1px', lineHeight: 1 }}>{item.num}</div>
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', textAlign: 'right' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '13px', letterSpacing: '4px', color: 'var(--accent-color)', borderBottom: '1px solid rgba(121, 82, 255, 0.3)', paddingBottom: '6px' }}>
+                    <div style={{ fontFamily: '"Noto Serif JP", serif', fontWeight: 900, fontSize: '13px', letterSpacing: '3px', color: 'var(--accent-color)', borderBottom: '1px solid rgba(121, 82, 255, 0.3)', paddingBottom: '6px' }}>
                       {item.jp}
                     </div>
-                    <div style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', letterSpacing: '2px', color: 'var(--muted-color)' }}>{item.en}</div>
+                    <div style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', letterSpacing: '2px', color: 'var(--muted-color)', fontWeight: 'bold' }}>{item.en}</div>
                   </div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--accent-color)', letterSpacing: '-1px', lineHeight: 1 }}>{item.num}</div>
                 </div>
               ))}
             </div>
 
           </div>
 
-          {/* Bottom Row HUD */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid rgba(128,128,128,0.2)', paddingBottom: '15px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-               <div style={{ display: 'flex', gap: '5px' }}>
-                 {[1,2,3].map(n => <div key={n} style={{ width: '15px', height: '4px', background: n === 1 ? 'var(--brand-purple)' : 'rgba(128,128,128,0.3)' }}></div>)}
-               </div>
-               <div style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', letterSpacing: '4px', color: 'var(--muted-color)' }}>SYSTEM ACTIVE</div>
+          {/* Bottom HUD Console Row (Reference 1 Bottom Panel) */}
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            width: '100%', 
+            borderTop: '1px solid rgba(128, 128, 128, 0.15)',
+            paddingTop: '14px',
+            position: 'relative'
+          }}>
+            {/* Bottom Left: warning blocks & HANDLE_WITH_CARE; */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ display: 'flex', gap: '3px' }} className="hud-blink-warning">
+                <div style={{ width: '8px', height: '8px', background: '#FF3B30' }} />
+                <div style={{ width: '8px', height: '8px', background: '#FF3B30' }} />
+              </div>
+              
+              <span style={{ fontSize: '9px', fontFamily: 'monospace', letterSpacing: '2.5px', color: 'var(--accent-color)', fontWeight: 'bold' }}>
+                /// HANDLE_WITH_CARE;
+              </span>
             </div>
-            
-            <div style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', letterSpacing: '4px', color: 'var(--accent-color)' }}>
-               [ LAT: 35.6762° N // LON: 139.6503° E ]
+
+            {/* Bottom Center reticles & designs */}
+            <div className="hide-on-mobile" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              {/* Design watermark WyHXnR (Reference 1 bottom center) */}
+              <span style={{ fontSize: '8px', fontFamily: 'monospace', letterSpacing: '1px', color: 'var(--muted-color)', opacity: 0.7 }}>
+                DESIGNED BY FURYPORT // CO-OP LABS
+              </span>
+              
+              {/* Miniature crossed blocks */}
+              <div style={{ display: 'flex', gap: '6px', fontSize: '9px', fontFamily: 'monospace', color: 'var(--brand-purple)', fontWeight: 'bold' }}>
+                <span>[✕]</span>
+                <span>[+]</span>
+              </div>
+            </div>
+
+            {/* Bottom Right: GPS Coordinates & Calibration */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              {/* Mini reticle */}
+              <span style={{ fontSize: '10px', fontFamily: 'monospace', color: 'var(--brand-purple)' }}>∅</span>
+              
+              <span style={{ fontSize: '9px', fontFamily: 'monospace', letterSpacing: '3px', color: 'var(--accent-color)' }}>
+                [ LAT: 35.6762° N // LON: 139.6503° E ]
+              </span>
             </div>
           </div>
           
         </div>
 
-        <div className="scroll-indicator" style={{ zIndex: 1 }}>Scroll down</div>
+        {/* Custom technical scroll tracker scanner (Reference 1 & 4 Style) */}
+        <div 
+          className="hide-on-mobile"
+          style={{ 
+            position: 'absolute', 
+            bottom: '82px', 
+            left: '50%', 
+            transform: 'translateX(-50%)', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            gap: '8px',
+            zIndex: 4,
+            pointerEvents: 'none'
+          }}
+        >
+          <span style={{ fontSize: '8.5px', fontFamily: 'monospace', letterSpacing: '3px', color: 'var(--brand-purple)', textTransform: 'uppercase', fontWeight: 'bold' }}>
+            SCROLL TO EXPLORE
+          </span>
+          {/* Scanning box sliding down a track */}
+          <div style={{ width: '1px', height: '42px', background: 'rgba(128,128,128,0.2)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '14px',
+              background: 'var(--brand-purple)',
+              boxShadow: '0 0 4px var(--brand-purple)',
+              animation: 'scrollSlideHUD 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite'
+            }} />
+          </div>
+          <style dangerouslySetInnerHTML={{
+            __html: `
+            @keyframes scrollSlideHUD {
+              0% { top: -14px; }
+              100% { top: 42px; }
+            }
+          `}} />
+        </div>
       </section>
 
       {/* 2. Works Preview (Slider & Portal Link) */}

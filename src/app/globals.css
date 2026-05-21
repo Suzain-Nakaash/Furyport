@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Noto+Serif+JP:wght@900&family=Satisfy&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,16 +33,17 @@
 }
 
 :root {
-  --bg-color: #0a0a0a;
+  --bg-color: #040307;
   --accent-color: #ffffff;
-  --muted-color: #666666;
-  --grid-color: rgba(255, 255, 255, 0.03);
+  --muted-color: #8c8c9e;
+  --grid-color: rgba(121, 82, 255, 0.04);
   --font-display: 'Helvetica', sans-serif;
   --font-sans: 'Helvetica', sans-serif;
   --font-hero: 'Helvetica', sans-serif;
-  --gradient-bg: linear-gradient(135deg, #1a1a1a, #000000);
-  --contact-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
-  --contact-border: rgba(255, 255, 255, 0.15);
+  --brand-purple: #7952ff;
+  --gradient-bg: radial-gradient(circle at 50% 50%, #080612 0%, #030206 100%);
+  --contact-bg: linear-gradient(135deg, rgba(13, 13, 18, 0.7) 0%, rgba(8, 8, 11, 0.8) 100%);
+  --contact-border: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="light"] {
@@ -128,8 +131,8 @@
 body {
   background: var(--gradient-bg);
   background-attachment: fixed;
-  background-size: 200% 200%;
-  animation: gradientMove 15s ease infinite;
+  background-size: 150% 150%;
+  animation: gradientMove 22s ease-in-out infinite alternate;
   color: var(--accent-color);
   font-family: var(--font-sans);
   font-style: normal;
@@ -138,9 +141,9 @@ body {
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 50% 50%; }
+  100% { background-position: 100% 100%; }
 }
 
 /* Custom Scrollbar */
@@ -170,7 +173,7 @@ body {
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100000000;
   mix-blend-mode: difference;
   transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -189,7 +192,7 @@ body {
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 100000000;
   mix-blend-mode: difference;
   display: block;
   transition: opacity 0.3s;
@@ -199,6 +202,18 @@ body {
   opacity: 0;
 }
 
+/* Custom Cursor Auto-Hide when Mouse is Inactive during Playback */
+body.hide-cursor,
+body.hide-cursor * {
+  cursor: none !important;
+}
+
+body.hide-cursor .custom-cursor,
+body.hide-cursor .custom-cursor-dot {
+  opacity: 0 !important;
+  transition: opacity 0.5s ease !important;
+}
+
 /* Subtle Background Grid Overlay for Sci-Fi Tech Vibe */
 .grid-bg {
   position: fixed;
@@ -206,9 +221,14 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  /* Glowing Volumetric Highlights combined with a technical sci-fi grid overlay (Reference 3) */
+  background-size: 100% 100%, 40px 40px;
+  background-image: 
+    radial-gradient(circle at 85% 15%, rgba(121, 82, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 10% 85%, rgba(59, 77, 224, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(162, 143, 255, 0.03) 0%, transparent 70%),
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   z-index: 0;
   pointer-events: none;
 }
@@ -281,14 +301,16 @@ header.header-hidden .nav-right {
 
 /* Glass cards */
 .glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  backdrop-filter: blur(30px) saturate(150%);
-  -webkit-backdrop-filter: blur(30px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, rgba(13, 13, 18, 0.72) 0%, rgba(8, 8, 11, 0.82) 100%);
+  backdrop-filter: blur(40px) saturate(160%);
+  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 24px 80px rgba(0, 0, 0, 0.5), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
   border-radius: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 [data-theme="light"] .glass-panel {
   background: rgba(255, 255, 255, 0.45);
@@ -938,4 +960,135 @@ body.video-modal-open header {
   pointer-events: none !important;
   transition: opacity 0.3s ease !important;
 }
+
+/* ==========================================================================
+   NEO-TOKYO CYBER-JAPANESE TECH HUD HERO PATTERNS (References 1, 2, 3, & 4)
+   ========================================================================== */
+
+/* Technical Repeating Barcode Patterns */
+.tech-barcode-horiz {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 1.5px,
+    transparent 1.5px,
+    transparent 4px
+  );
+  opacity: 0.85;
+}
+
+.tech-barcode-vert {
+  background: repeating-linear-gradient(
+    180deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 1.5px,
+    transparent 1.5px,
+    transparent 4px
+  );
+  opacity: 0.85;
+}
+
+.tech-barcode-dense-horiz {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.8;
+}
+
+.tech-barcode-dense-vert {
+  background: repeating-linear-gradient(
+    180deg,
+    var(--accent-color) 0px,
+    var(--accent-color) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.8;
+}
+
+/* Cybernetic Checkerboard pattern (Reference 1 Top Right) */
+.tech-checkerboard {
+  background-image: 
+    linear-gradient(45deg, var(--accent-color) 25%, transparent 25%), 
+    linear-gradient(-45deg, var(--accent-color) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, var(--accent-color) 75%), 
+    linear-gradient(-45deg, transparent 75%, var(--accent-color) 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+  opacity: 0.75;
+}
+
+/* Subtle Distressed Grain Texture Overlay for Artistic Depth (Reference 2) */
+.hud-distress-grain {
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(121, 82, 255, 0.05) 0%, transparent 80%);
+}
+
+.hud-distress-grain::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.015;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Technical scanning laser lines */
+@keyframes techLaserScroll {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.laser-scanner-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-purple);
+  box-shadow: 0 0 10px var(--brand-purple), 0 0 4px var(--brand-purple);
+  opacity: 0.5;
+  animation: techLaserScroll 6s linear infinite;
+  pointer-events: none;
+}
+
+/* Blinking Warning Block */
+@keyframes hudWarningBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.hud-blink-warning {
+  animation: hudWarningBlink 1.8s infinite ease-in-out;
+}
+
+/* Calligraphic Japanese Centerpiece Brush Distress (Reference 2) */
+.sajou-brush-sweep {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--brand-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.sajou-brush-sweep::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--brand-purple) 20%, var(--accent-color) 80%, transparent 100%);
+  opacity: 0.6;
+}
+
+/* Asymmetric vertical telemetry texts */
+.telemetry-vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
 

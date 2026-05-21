@@ -341,30 +341,11 @@ export default function ContactTerminal() {
               <div className="corner-bracket bottom-left"></div>
               <div className="corner-bracket bottom-right"></div>
               <div className="laser-line"></div>
-              <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%', fill: 'none', stroke: 'var(--accent-color)', strokeWidth: '0.8', opacity: 0.8 }}>
-                {/* Camera Viewfinder Corners */}
-                <path d="M 12 20 L 12 12 L 20 12" stroke="var(--brand-purple)" strokeWidth="1" />
-                <path d="M 80 12 L 88 12 L 88 20" stroke="var(--brand-purple)" strokeWidth="1" />
-                <path d="M 12 80 L 12 88 L 20 88" stroke="var(--brand-purple)" strokeWidth="1" />
-                <path d="M 80 88 L 88 88 L 88 80" stroke="var(--brand-purple)" strokeWidth="1" />
-                
-                {/* Center Reticle */}
-                <circle cx="50" cy="50" r="26" stroke="var(--accent-color)" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.3" />
-                <circle cx="50" cy="50" r="14" stroke="var(--accent-color)" strokeWidth="0.8" opacity="0.5" />
-                
-                {/* Crosshairs */}
-                <line x1="50" y1="44" x2="50" y2="56" stroke="var(--brand-purple)" strokeWidth="0.8" />
-                <line x1="44" y1="50" x2="56" y2="50" stroke="var(--brand-purple)" strokeWidth="0.8" />
-                
-                {/* Tiny HUD textual annotations */}
-                <text x="16" y="24" fill="var(--accent-color)" fontSize="5" fontFamily="var(--font-sans)" letterSpacing="1" opacity="0.4" style={{ fontWeight: 'bold' }}>REC</text>
-                <text x="70" y="24" fill="var(--brand-purple)" fontSize="5" fontFamily="var(--font-sans)" letterSpacing="1" opacity="0.8" style={{ fontWeight: 'bold' }}>60FPS</text>
-                <text x="16" y="80" fill="var(--accent-color)" fontSize="5" fontFamily="var(--font-sans)" letterSpacing="1" opacity="0.4">4K UHD</text>
-                
-                {/* Bottom calibration scale */}
-                <line x1="32" y1="88" x2="68" y2="88" stroke="var(--accent-color)" strokeWidth="0.5" opacity="0.2" />
-                <line x1="50" y1="86" x2="50" y2="90" stroke="var(--accent-color)" strokeWidth="0.5" opacity="0.4" />
-              </svg>
+              <img 
+                src="/assets/yt_qr.png" 
+                alt="YouTube QR Connection Port" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+              />
             </div>
 
             {/* Direct Connect Link */}
@@ -480,29 +461,11 @@ export default function ContactTerminal() {
               <div className="corner-bracket bottom-left"></div>
               <div className="corner-bracket bottom-right"></div>
               <div className="laser-line"></div>
-              <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%', fill: 'none', stroke: 'var(--accent-color)', strokeWidth: '0.6', opacity: 0.8 }}>
-                {/* Concentric ellipses forming a 3D abstract orbital mesh sphere representing Blender lookdev wireframe */}
-                <ellipse cx="50" cy="50" rx="36" ry="14" stroke="var(--accent-color)" strokeWidth="0.5" transform="rotate(30 50 50)" />
-                <ellipse cx="50" cy="50" rx="36" ry="14" stroke="var(--accent-color)" strokeWidth="0.5" transform="rotate(-30 50 50)" />
-                <ellipse cx="50" cy="50" rx="36" ry="14" stroke="var(--brand-purple)" strokeWidth="0.8" transform="rotate(90 50 50)" />
-                <ellipse cx="50" cy="50" rx="36" ry="14" stroke="var(--accent-color)" strokeWidth="0.5" transform="rotate(0 50 50)" />
-                
-                {/* Coordinate Guides */}
-                <line x1="50" y1="10" x2="50" y2="90" stroke="var(--accent-color)" strokeWidth="0.4" strokeDasharray="2 3" opacity="0.3" />
-                <line x1="10" y1="50" x2="90" y2="50" stroke="var(--accent-color)" strokeWidth="0.4" strokeDasharray="2 3" opacity="0.3" />
-                
-                {/* 3D vector vertices points */}
-                <circle cx="50" cy="14" r="1.2" fill="var(--brand-purple)" />
-                <circle cx="50" cy="86" r="1.2" fill="var(--brand-purple)" />
-                <circle cx="14" cy="50" r="1.2" fill="var(--brand-purple)" />
-                <circle cx="86" cy="50" r="1.2" fill="var(--brand-purple)" />
-                
-                {/* Small bounding corner trackers */}
-                <path d="M 32 32 L 32 36" stroke="var(--accent-color)" strokeWidth="0.5" />
-                <path d="M 32 32 L 36 32" stroke="var(--accent-color)" strokeWidth="0.5" />
-                <path d="M 68 32 L 68 36" stroke="var(--accent-color)" strokeWidth="0.5" />
-                <path d="M 68 32 L 64 32" stroke="var(--accent-color)" strokeWidth="0.5" />
-              </svg>
+              <img 
+                src="/assets/store_qr.png" 
+                alt="Store QR Connection Port" 
+                style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+              />
             </div>
 
             {/* Direct Connect Link */}

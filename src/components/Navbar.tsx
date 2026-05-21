@@ -29,51 +29,66 @@ export default function Navbar() {
 
   return (
     <header 
-      className={isScrolledDown ? 'header-hidden' : ''} 
       style={{ 
-        padding: '10px 5%', 
-        borderBottom: '1px solid rgba(128, 128, 128, 0.1)', 
-        background: theme === 'light' ? 'rgba(255, 255, 255, 0.75)' : 'rgba(10, 10, 10, 0.7)', 
-        backdropFilter: 'blur(20px)', 
-        WebkitBackdropFilter: 'blur(20px)', 
-        boxShadow: 'none'
+        position: 'fixed',
+        top: '20px',
+        left: '50%',
+        transform: isScrolledDown ? 'translate(-50%, -100px)' : 'translate(-50%, 0)',
+        width: '90%',
+        maxWidth: '1200px',
+        padding: '10px 40px',
+        borderRadius: '100px',
+        background: theme === 'light' 
+          ? 'rgba(255, 255, 255, 0.75)' 
+          : 'rgba(10, 10, 10, 0.65)',
+        border: theme === 'light' 
+          ? '1px solid rgba(121, 82, 255, 0.15)' 
+          : '1px solid rgba(255, 255, 255, 0.08)',
+        backdropFilter: 'blur(24px) saturate(140%)',
+        WebkitBackdropFilter: 'blur(24px) saturate(140%)',
+        boxShadow: theme === 'light'
+          ? '0 12px 40px rgba(121, 82, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
+          : '0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+        zIndex: 100,
+        transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
       }}
     >
-      <div className="nav-container">
-        <Link href="/" className="nav-logo interactive" style={{ marginRight: '40px' }}>
-          <img 
-            src="/assets/Furyxzia_logo_00000-depositphotos-bgremover.png" 
-            alt="Furyxzia Logo" 
-            style={{ height: '30px', width: 'auto', objectFit: 'contain' }} 
-          />
-        </Link>
-
-        <div className="nav-left">
-          <Link href="/work" className={`nav-link-minimal interactive ${isActive('/work')}`} style={{ marginLeft: 0 }}>
-            Works
-          </Link>
-          <Link href="/videos" className={`nav-link-minimal interactive ${isActive('/videos')}`}>
-            Videos
-          </Link>
-          <Link href="/about" className={`nav-link-minimal interactive ${isActive('/about')}`}>
-            About
+      <div className="nav-container" style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+        {/* Left: Logo container */}
+        <div style={{ flex: '1 1 0%', display: 'flex', justifyContent: 'flex-start' }}>
+          <Link href="/" className="nav-logo interactive" style={{ display: 'flex', alignItems: 'center' }}>
+            <img 
+              src="/assets/Furyxzia_logo_00000-depositphotos-bgremover.png" 
+              alt="Furyxzia Logo" 
+              style={{ height: '28px', width: 'auto', objectFit: 'contain' }} 
+            />
           </Link>
         </div>
 
-        <div className="nav-right">
-          <Link href="/contact" className={`nav-link-minimal interactive ${isActive('/contact')}`}>
+        {/* Center: Main Navigation Links */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Link href="/" className={`nav-link-minimal interactive ${isActive('/')}`} style={{ margin: '0 12px' }}>
+            Home
+          </Link>
+          <Link href="/work" className={`nav-link-minimal interactive ${isActive('/work')}`} style={{ margin: '0 12px' }}>
+            Works
+          </Link>
+          <Link href="/videos" className={`nav-link-minimal interactive ${isActive('/videos')}`} style={{ margin: '0 12px' }}>
+            Videos
+          </Link>
+          <Link href="/about" className={`nav-link-minimal interactive ${isActive('/about')}`} style={{ margin: '0 12px' }}>
+            About
+          </Link>
+          <Link href="/contact" className={`nav-link-minimal interactive ${isActive('/contact')}`} style={{ margin: '0 12px' }}>
             Contact
           </Link>
-          <a href="https://www.instagram.com/furyxzia" target="_blank" rel="noopener noreferrer" className="nav-link-minimal interactive">
-            Instagram ↗
-          </a>
-          <a href="https://www.youtube.com/@furyxzia" target="_blank" rel="noopener noreferrer" className="nav-link-minimal interactive hide-on-mobile">
-            YouTube ↗
-          </a>
-          <a href="https://payhip.com/Furyxzia" target="_blank" rel="noopener noreferrer" className="nav-link-minimal interactive hide-on-mobile">
-            Store ↗
-          </a>
-          
+        </div>
+
+        {/* Right: Theme Toggle container */}
+        <div style={{ flex: '1 1 0%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
           {/* Custom Industrial Pill Switch Toggle */}
           <div 
             onClick={toggleTheme}
@@ -83,7 +98,6 @@ export default function Navbar() {
               alignItems: 'center',
               gap: '10px',
               cursor: 'pointer',
-              marginLeft: '25px',
               userSelect: 'none'
             }}
           >
