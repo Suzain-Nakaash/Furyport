@@ -88,7 +88,7 @@ export default function WorkPage() {
 
       {/* Grid Layout Container (Reduced grid minimum to 280px for smaller, tighter cards) */}
       <div style={{ width: '100%', maxWidth: '1400px', padding: '0 5%' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '30px' }}>
           
           {projectsList.map((project) => (
             <div 

@@ -1091,4 +1091,113 @@ body.video-modal-open header {
   text-orientation: mixed;
 }
 
+/* ==========================================================================
+   RESPONSIVE OVERHAUL (MOBILE, TABLET, LAPTOP)
+   ========================================================================== */
 
+/* Utility classes */
+.desktop-only {
+  display: flex !important;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem) !important;
+  }
+  .gallery-section {
+    padding: 60px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Layout utilities */
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex !important;
+  }
+  
+  /* Reset hero padding and sizing */
+  .hero {
+    padding: 0 15px !important;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3.5rem) !important;
+    letter-spacing: 6px !important;
+  }
+  .hero p {
+    font-size: 0.9rem !important;
+    letter-spacing: 1px !important;
+    max-width: 95% !important;
+  }
+  
+  /* Reset custom cursor for touch screens */
+  .custom-cursor, .custom-cursor-dot {
+    display: none !important;
+  }
+  * {
+    cursor: auto !important;
+  }
+  
+  /* Remove scrollbar hiding so mobile users can scroll normally, or keep it minimal */
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Global section spacing */
+  section, .gallery-section, footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .section-title {
+    padding-left: 0 !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+  }
+
+  /* Contact terminal fixes */
+  .social-hub-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .social-card {
+    padding: 25px 20px !important;
+  }
+  
+  /* Footer */
+  footer {
+    flex-direction: column !important;
+    gap: 20px !important;
+    text-align: center !important;
+    padding: 40px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller mobile fixes */
+  .hero h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem) !important;
+    letter-spacing: 4px !important;
+  }
+  
+  header {
+    padding: 10px 15px !important;
+    width: 95% !important;
+  }
+  
+  .slide-item {
+    width: 260px !important;
+    height: 146px !important;
+  }
+  
+  /* Contact stats wrapping */
+  .social-card .stats-row {
+    flex-wrap: wrap !important;
+  }
+}

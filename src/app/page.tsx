@@ -456,7 +456,7 @@ export default function Home() {
 
       {/* 3. Section Previews (About & Videos & Contact Mini-Grid) */}
       <section style={{ padding: '100px 5%', position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', width: '100%', maxWidth: '1400px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '30px', width: '100%', maxWidth: '1400px' }}>
           
           {/* About Teaser Card */}
           <div 

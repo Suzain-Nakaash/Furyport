@@ -81,7 +81,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '40px', marginBottom: '60px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '40px', marginBottom: '60px' }}>
               {[
                 { label: 'BASE LOCATION', value: 'TOKYO, JAPAN' },
                 { label: 'PRIMARY DISCIPLINE', value: 'MOTION / VFX / 3D' },

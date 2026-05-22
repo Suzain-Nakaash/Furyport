@@ -22,7 +22,7 @@ export default function ContactTerminal() {
         className="social-hub-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
           gap: '30px',
           width: '100%',
         }}
@@ -76,7 +76,7 @@ export default function ContactTerminal() {
               </p>
               
               {/* Aesthetic flat architectural stats layout */}
-              <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
+              <div className="stats-row" style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
                 <div style={{ flex: 1 }}>
                   <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '3px' }}>Followers</span>
                   <span style={{ fontSize: '1.2rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', fontWeight: 'bold' }}>114K</span>

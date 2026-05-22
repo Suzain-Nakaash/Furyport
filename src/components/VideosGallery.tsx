@@ -83,7 +83,7 @@ export default function VideosGallery() {
     <div style={{ width: '100%', maxWidth: '1400px', padding: '0 5%' }}>
       
       {/* Video Grid (Dense award-winning 240px card alignment) */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '30px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '30px' }}>
         {videosList.map((video) => (
           <div
             key={video.id}
