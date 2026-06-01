@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FURYXZIA — About & Creative Bio',
-  description: 'Storytelling, visual aesthetics, and Command and Service Module details for Darshan Arsid (Furyxzia). // 2026',
+  title: 'FURYXZIA — About & Professional Bio',
+  description: 'Professional background, expertise, and capabilities for Darshan Arsid (Furyxzia). // 2026',
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
       {/* Clean, Elegant Heading Structure */}
       <div style={{ width: '100%', maxWidth: '1400px', padding: '0 5%', marginBottom: '60px', alignSelf: 'center' }}>
         <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--brand-purple)', letterSpacing: '4px', textTransform: 'uppercase', display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
-          CREATOR PROFILE
+          PROFESSIONAL PROFILE
         </span>
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--accent-color)', textTransform: 'uppercase', letterSpacing: '-1.5px', margin: 0, fontWeight: 'bold', lineHeight: 0.9 }}>
           ABOUT ME
@@ -45,10 +45,10 @@ export default function AboutPage() {
             
             <div style={{ display: 'flex', gap: '30px', height: '350px' }}>
               <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: 'var(--font-display)', fontSize: '2.5rem', color: 'var(--accent-color)', letterSpacing: '15px' }}>
-                世界に対するビジョン
+                創造的な卓越性
               </div>
               <div style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: 'var(--font-sans)', fontSize: '1rem', color: 'var(--muted-color)', letterSpacing: '6px', marginTop: '60px' }}>
-                いつか自分を愛してみたい
+                常に進化を続ける
               </div>
               
               <div style={{ marginLeft: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between' }}>
@@ -75,9 +75,9 @@ export default function AboutPage() {
             
             <div style={{ marginBottom: '60px', position: 'relative' }}>
               <div style={{ position: 'absolute', top: '10px', left: '-20px', width: '2px', height: '40px', background: 'var(--brand-purple)' }}></div>
-              <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', letterSpacing: '-0.5px', marginBottom: '25px', textTransform: 'uppercase' }}>Command and Service Module (CSM)</h2>
+              <h2 style={{ fontSize: '2rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', letterSpacing: '-0.5px', marginBottom: '25px', textTransform: 'uppercase' }}>Professional Overview</h2>
               <p style={{ fontSize: '14px', color: 'var(--muted-color)', lineHeight: 1.8, fontFamily: 'var(--font-sans)', maxWidth: '450px' }}>
-                Furyxzia is a multidisciplinary digital studio specializing in high-end cinematic video editing, visual effects, and complex 3D aesthetics. Pushing a signature look built on seamless transitions, sharp geometry, and structural balance, the work challenges contemporary visual storytelling norms.
+                I am Darshan Arsid, the creative force behind Furyxzia, a digital studio specializing in high-end cinematic video editing, visual effects, and complex 3D aesthetics. My signature aesthetic is built on seamless transitions, sharp geometry, and structural balance, aiming to deliver professional, world-class visual storytelling that elevates brands and digital experiences.
               </p>
             </div>
 
@@ -101,7 +101,7 @@ export default function AboutPage() {
             {/* Tiny technical block */}
             <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '25px', borderTop: '1px dashed rgba(128,128,128,0.2)', paddingTop: '30px' }}>
               <div style={{ fontSize: '8px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '1px', lineHeight: 1.6, maxWidth: '280px' }}>
-                EVENT HORIZON DOLOR SIT AMET, SINGULARITY ELIT SED DO. GRAVITATIONAL LENSING TEMPOR INCIDIDUNT UT LABORE. SPAGHETTIFICATION IPSUM GRAVITY, TIDAL FORCES EXTREME PRESSURE. ELONGATION ATOM BY ATOM.
+                DEDICATED TO DELIVERING HIGH-FIDELITY VISUAL EXPERIENCES. LEVERAGING INDUSTRY-STANDARD TOOLS AND ADVANCED WORKFLOWS TO BRING COMPLEX CREATIVE VISIONS TO LIFE WITH PRECISION AND SCALE.
               </div>
               
               <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
@@ -110,7 +110,7 @@ export default function AboutPage() {
                     <div key={n} style={{ width: '4px', height: '4px', background: n > 3 ? 'transparent' : 'var(--accent-color)', border: '1px solid var(--accent-color)', borderRadius: '50%' }}></div>
                   ))}
                 </div>
-                <div style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--accent-color)', letterSpacing: '2px', fontWeight: 'bold' }}>NASA</div>
+                <div style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--accent-color)', letterSpacing: '2px', fontWeight: 'bold' }}>PRO</div>
               </div>
             </div>
             

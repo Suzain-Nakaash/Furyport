@@ -4,12 +4,12 @@ import React from 'react';
 
 export default function ContactTerminal() {
   return (
-    <section 
-      id="contact-socials" 
-      style={{ 
-        width: '100%', 
-        maxWidth: '1400px', 
-        margin: '0 auto', 
+    <section
+      id="contact-socials"
+      style={{
+        width: '100%',
+        maxWidth: '1400px',
+        margin: '0 auto',
         padding: '0 5% 80px 5%',
         display: 'flex',
         flexDirection: 'column',
@@ -18,7 +18,7 @@ export default function ContactTerminal() {
       }}
     >
       {/* Direct Ports Connection */}
-      <div 
+      <div
         className="social-hub-grid"
         style={{
           display: 'grid',
@@ -27,9 +27,9 @@ export default function ContactTerminal() {
           width: '100%',
         }}
       >
-        
+
         {/* Instagram Hub Card */}
-        <div 
+        <div
           className="social-card glass-panel interactive"
           style={{
             background: 'var(--contact-bg)',
@@ -51,14 +51,14 @@ export default function ContactTerminal() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '20px', marginBottom: '25px' }}>
               <div>
-                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
-                  INSTAGRAM // 3D PORTFOLIO
+                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: '#E1306C', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
+                  INSTAGRAM
                 </span>
                 <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', margin: '5px 0 0 0', fontWeight: 'bold', letterSpacing: '-0.5px' }}>
                   furyxzia
                 </h3>
               </div>
-              
+
               {/* Sharp Industrial Square Icon Badge */}
               <div style={{ width: '40px', height: '40px', background: 'rgba(225, 48, 108, 0.04)', border: '1px solid rgba(225, 48, 108, 0.18)', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-color)' }}>
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +74,7 @@ export default function ContactTerminal() {
               <p style={{ fontSize: '13.5px', lineHeight: '1.6', color: 'var(--muted-color)', margin: 0, fontWeight: 300 }}>
                 Visual artist and experimentalist specializing in 3D abstract forms, spatial motion design, and high-fidelity CG simulations. Showcasing daily visual concepts and production lookdevs.
               </p>
-              
+
               {/* Aesthetic flat architectural stats layout */}
               <div className="stats-row" style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
                 <div style={{ flex: 1 }}>
@@ -104,9 +104,9 @@ export default function ContactTerminal() {
               <div className="corner-bracket bottom-left"></div>
               <div className="corner-bracket bottom-right"></div>
               <div className="laser-line"></div>
-              <img 
-                src="/assets/ig_qr.png" 
-                alt="Instagram QR Connection Port" 
+              <img
+                src="/assets/ig_qr.png"
+                alt="Instagram QR Connection Port"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
               />
             </div>
@@ -116,9 +116,9 @@ export default function ContactTerminal() {
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '1px', textTransform: 'uppercase' }}>
                 Scan to view on mobile or click below
               </span>
-              <a 
-                href="https://www.instagram.com/furyxzia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/furyxzia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn interactive"
                 style={{
@@ -149,7 +149,7 @@ export default function ContactTerminal() {
         </div>
 
         {/* X (Twitter) Hub Card */}
-        <div 
+        <div
           className="social-card glass-panel interactive"
           style={{
             background: 'var(--contact-bg)',
@@ -171,14 +171,14 @@ export default function ContactTerminal() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '20px', marginBottom: '25px' }}>
               <div>
-                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
-                  X / TWITTER // BROADCAST
+                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'rgba(62, 100, 224, 1)', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
+                  X / TWITTER
                 </span>
                 <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', margin: '5px 0 0 0', fontWeight: 'bold', letterSpacing: '-0.5px' }}>
                   @Furyxzia
                 </h3>
               </div>
-              
+
               {/* Sharp Industrial Square Icon Badge */}
               <div style={{ width: '40px', height: '40px', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(128, 128, 128, 0.15)', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-color)' }}>
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -192,7 +192,7 @@ export default function ContactTerminal() {
               <p style={{ fontSize: '13.5px', lineHeight: '1.6', color: 'var(--muted-color)', margin: 0, fontWeight: 300 }}>
                 Director and motion designer. Sharing experimental CG workflows, project updates, visual direction breakdowns, sound design concepts, and industry collaborations.
               </p>
-              
+
               {/* Aesthetic flat architectural stats layout */}
               <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
                 <div style={{ flex: 1 }}>
@@ -222,9 +222,9 @@ export default function ContactTerminal() {
               <div className="corner-bracket bottom-left"></div>
               <div className="corner-bracket bottom-right"></div>
               <div className="laser-line"></div>
-              <img 
-                src="/assets/x_qr.png" 
-                alt="X QR Connection Port" 
+              <img
+                src="/assets/x_qr.png"
+                alt="X QR Connection Port"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
               />
             </div>
@@ -234,9 +234,9 @@ export default function ContactTerminal() {
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '1px', textTransform: 'uppercase' }}>
                 Scan to view on mobile or click below
               </span>
-              <a 
-                href="https://x.com/Furyxzia?s=20" 
-                target="_blank" 
+              <a
+                href="https://x.com/Furyxzia?s=20"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn interactive"
                 style={{
@@ -267,7 +267,7 @@ export default function ContactTerminal() {
         </div>
 
         {/* YouTube Hub Card */}
-        <div 
+        <div
           className="social-card glass-panel interactive"
           style={{
             background: 'var(--contact-bg)',
@@ -289,14 +289,14 @@ export default function ContactTerminal() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '20px', marginBottom: '25px' }}>
               <div>
-                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
-                  YOUTUBE // CINEMATIC REEL
+                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: '#FF0000', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
+                  YOUTUBE
                 </span>
                 <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', margin: '5px 0 0 0', fontWeight: 'bold', letterSpacing: '-0.5px' }}>
                   furyxzia
                 </h3>
               </div>
-              
+
               {/* Sharp Industrial Square Icon Badge */}
               <div style={{ width: '40px', height: '40px', background: 'rgba(255, 0, 0, 0.04)', border: '1px solid rgba(255, 0, 0, 0.18)', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-color)' }}>
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -311,7 +311,7 @@ export default function ContactTerminal() {
               <p style={{ fontSize: '13.5px', lineHeight: '1.6', color: 'var(--muted-color)', margin: 0, fontWeight: 300 }}>
                 Official repository for high-resolution 3D visualizers, production design showreels, cinematic video works, and experimental audio-visual synchronization breakdowns.
               </p>
-              
+
               {/* Aesthetic flat statistics layout */}
               <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
                 <div style={{ flex: 1 }}>
@@ -341,9 +341,9 @@ export default function ContactTerminal() {
               <div className="corner-bracket bottom-left"></div>
               <div className="corner-bracket bottom-right"></div>
               <div className="laser-line"></div>
-              <img 
-                src="/assets/yt_qr.png" 
-                alt="YouTube QR Connection Port" 
+              <img
+                src="/assets/yt_qr.png"
+                alt="YouTube QR Connection Port"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
               />
             </div>
@@ -353,9 +353,9 @@ export default function ContactTerminal() {
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '1px', textTransform: 'uppercase' }}>
                 Tune into the direct channel link below
               </span>
-              <a 
-                href="https://www.youtube.com/@furyxzia" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/@furyxzia"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn interactive"
                 style={{
@@ -386,7 +386,7 @@ export default function ContactTerminal() {
         </div>
 
         {/* Payhip Store Hub Card */}
-        <div 
+        <div
           className="social-card glass-panel interactive"
           style={{
             background: 'var(--contact-bg)',
@@ -408,14 +408,14 @@ export default function ContactTerminal() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '20px', marginBottom: '25px' }}>
               <div>
-                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
-                  PAYHIP // DIGITAL STOREFRONT
+                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: '#F2A900', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
+                  PAYHIP
                 </span>
                 <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', margin: '5px 0 0 0', fontWeight: 'bold', letterSpacing: '-0.5px' }}>
                   Furyxzia Assets
                 </h3>
               </div>
-              
+
               {/* Sharp Industrial Square Icon Badge */}
               <div style={{ width: '40px', height: '40px', background: 'rgba(242, 169, 0, 0.04)', border: '1px solid rgba(242, 169, 0, 0.18)', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-color)' }}>
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -431,7 +431,7 @@ export default function ContactTerminal() {
               <p style={{ fontSize: '13.5px', lineHeight: '1.6', color: 'var(--muted-color)', margin: 0, fontWeight: 300 }}>
                 Production-ready 3D abstract kits, lighting setups, blender project files, visual elements, and motion design templates built specifically for professional industry creators.
               </p>
-              
+
               {/* Aesthetic flat statistics layout */}
               <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
                 <div style={{ flex: 1 }}>
@@ -461,9 +461,9 @@ export default function ContactTerminal() {
               <div className="corner-bracket bottom-left"></div>
               <div className="corner-bracket bottom-right"></div>
               <div className="laser-line"></div>
-              <img 
-                src="/assets/store_qr.png" 
-                alt="Store QR Connection Port" 
+              <img
+                src="/assets/store_qr.png"
+                alt="Store QR Connection Port"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
               />
             </div>
@@ -473,9 +473,9 @@ export default function ContactTerminal() {
               <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '1px', textTransform: 'uppercase' }}>
                 Acquire 3D elements and assets below
               </span>
-              <a 
-                href="https://payhip.com/Furyxzia" 
-                target="_blank" 
+              <a
+                href="https://payhip.com/Furyxzia"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn interactive"
                 style={{
@@ -496,6 +496,104 @@ export default function ContactTerminal() {
                 }}
               >
                 <span>GET ASSETS</span>
+                <svg viewBox="0 0 24 24" style={{ width: '14px', height: '14px', fill: 'currentColor' }}>
+                  <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Email Hub Card */}
+        <div
+          className="social-card glass-panel interactive"
+          style={{
+            background: 'var(--contact-bg)',
+            border: '1px solid var(--contact-border)',
+            padding: '40px 35px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            borderRadius: '0',
+            position: 'relative',
+            overflow: 'hidden',
+            transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          }}
+        >
+          {/* Neon Hue glow element inside card */}
+          <div className="card-accent-glow email-glow" />
+
+          {/* Top Row: Brand & Handle */}
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(128,128,128,0.1)', paddingBottom: '20px', marginBottom: '25px' }}>
+              <div>
+                <span style={{ fontSize: '10px', fontFamily: 'var(--font-sans)', color: '#00E676', letterSpacing: '3px', textTransform: 'uppercase', display: 'block', fontWeight: 'bold' }}>
+                  EMAIL
+                </span>
+                <h3 style={{ fontSize: '1.8rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', margin: '5px 0 0 0', fontWeight: 'bold', letterSpacing: '-0.5px' }}>
+                  furyxzia@gmail.com
+                </h3>
+              </div>
+
+              {/* Sharp Industrial Square Icon Badge */}
+              <div style={{ width: '40px', height: '40px', background: 'rgba(0, 230, 118, 0.04)', border: '1px solid rgba(0, 230, 118, 0.18)', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-color)' }}>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            {/* Middle Row: Biography & Metrics */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginBottom: '30px' }}>
+              <p style={{ fontSize: '13.5px', lineHeight: '1.6', color: 'var(--muted-color)', margin: 0, fontWeight: 300 }}>
+                For business inquiries, project collaborations, and direct communication. Feel free to reach out via email for a prompt response.
+              </p>
+
+              {/* Aesthetic flat statistics layout */}
+              <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid rgba(128,128,128,0.1)', borderBottom: '1px solid rgba(128,128,128,0.1)', padding: '15px 0', marginTop: '5px' }}>
+                <div style={{ flex: 1 }}>
+                  <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '3px' }}>Response Time</span>
+                  <span style={{ fontSize: '1.2rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', fontWeight: 'bold' }}>24H</span>
+                </div>
+                <div style={{ width: '1px', background: 'rgba(128,128,128,0.12)', alignSelf: 'stretch' }} />
+                <div style={{ flex: 1, paddingLeft: '8px' }}>
+                  <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '3px' }}>Availability</span>
+                  <span style={{ fontSize: '1.2rem', fontFamily: 'var(--font-display)', color: 'var(--accent-color)', fontWeight: 'bold' }}>OPEN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row: Connect Button */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginTop: 'auto' }}>
+            {/* Direct Connect Link */}
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <span style={{ fontSize: '9px', fontFamily: 'var(--font-sans)', color: 'var(--muted-color)', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Directly draft a message via your client
+              </span>
+              <a
+                href="mailto:furyxzia@gmail.com"
+                className="social-btn interactive"
+                style={{
+                  padding: '14px 20px',
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-sans)',
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  border: '1px solid rgba(128,128,128,0.2)',
+                  color: 'var(--accent-color)',
+                  borderRadius: '0',
+                  background: 'transparent',
+                }}
+              >
+                <span>SEND AN EMAIL</span>
                 <svg viewBox="0 0 24 24" style={{ width: '14px', height: '14px', fill: 'currentColor' }}>
                   <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z" />
                 </svg>
@@ -546,6 +644,10 @@ export default function ContactTerminal() {
 
         .store-glow {
           background: radial-gradient(circle at 10% 10%, rgba(242, 169, 0, 0.04) 0%, transparent 60%);
+        }
+
+        .email-glow {
+          background: radial-gradient(circle at 10% 10%, rgba(0, 230, 118, 0.04) 0%, transparent 60%);
         }
 
         .qr-container {
