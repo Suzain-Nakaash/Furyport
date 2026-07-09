@@ -172,8 +172,8 @@ body {
   pointer-events: none;
   z-index: 100000000;
   color: #a855f7; /* Dark mode purple */
-  transition: transform 0.1s ease-out;
-  transform: translate(0, 0);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
   /* Remove mix-blend-mode for a solid color cursor */
 }
 
