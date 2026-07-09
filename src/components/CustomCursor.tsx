@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTheme } from './ThemeContext';
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const cursorDotRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLImageElement>(null);
   const pathname = usePathname();
+  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -17,16 +18,15 @@ export default function CustomCursor() {
     if (!mounted) return;
 
     const cursor = cursorRef.current;
-    const cursorDot = cursorDotRef.current;
-
-    if (!cursor || !cursorDot) return;
+    if (!cursor) return;
 
     // Track mouse coordinates
     const handleMouseMove = (e: MouseEvent) => {
+      // Offset by half the width/height if you want it centered, 
+      // or 0 if it's a pointer cursor pointing from top-left.
+      // Usually custom image cursors point from top-left.
       cursor.style.left = `${e.clientX}px`;
       cursor.style.top = `${e.clientY}px`;
-      cursorDot.style.left = `${e.clientX}px`;
-      cursorDot.style.top = `${e.clientY}px`;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -36,10 +36,8 @@ export default function CustomCursor() {
       const target = e.target as HTMLElement | null;
       if (target && target.closest('.interactive')) {
         cursor.classList.add('hovered');
-        cursorDot.classList.add('hovered');
       } else {
         cursor.classList.remove('hovered');
-        cursorDot.classList.remove('hovered');
       }
     };
 
@@ -54,19 +52,19 @@ export default function CustomCursor() {
   // Reset cursor hover state whenever the path changes to prevent sticky states
   useEffect(() => {
     const cursor = cursorRef.current;
-    const cursorDot = cursorDotRef.current;
-    if (cursor && cursorDot) {
+    if (cursor) {
       cursor.classList.remove('hovered');
-      cursorDot.classList.remove('hovered');
     }
   }, [pathname]);
 
   if (!mounted) return null;
 
   return (
-    <>
-      <div className="custom-cursor" ref={cursorRef}></div>
-      <div className="custom-cursor-dot" ref={cursorDotRef}></div>
-    </>
+    <img
+      src={theme === 'light' ? '/assets/cursor-blue.png' : '/assets/cursor-purple.png'}
+      alt="Custom Cursor"
+      className="custom-cursor-img"
+      ref={cursorRef}
+    />
   );
 }

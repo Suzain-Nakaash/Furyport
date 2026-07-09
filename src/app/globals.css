@@ -164,42 +164,19 @@ body {
   background: #444;
 }
 
-/* Custom Interactive Cursor */
-.custom-cursor {
+/* Custom Interactive Cursor Image */
+.custom-cursor-img {
   width: 32px;
-  height: 32px;
-  border: 1.5px solid #fff;
-  border-radius: 50%;
   position: fixed;
-  transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 100000000;
-  mix-blend-mode: difference;
-  transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1), height 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  /* Pointer cursors usually have their hot spot at the top left, so we don't translate it */
+  transform: translate(0, 0);
+  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.custom-cursor.hovered {
-  width: 55px;
-  height: 55px;
-  background-color: #fff;
-}
-
-.custom-cursor-dot {
-  width: 6px;
-  height: 6px;
-  background-color: #fff;
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 100000000;
-  mix-blend-mode: difference;
-  display: block;
-  transition: opacity 0.3s;
-}
-
-.custom-cursor-dot.hovered {
-  opacity: 0;
+.custom-cursor-img.hovered {
+  transform: scale(1.2);
 }
 
 /* Custom Cursor Auto-Hide when Mouse is Inactive during Playback */
@@ -208,8 +185,7 @@ body.hide-cursor * {
   cursor: none !important;
 }
 
-body.hide-cursor .custom-cursor,
-body.hide-cursor .custom-cursor-dot {
+body.hide-cursor .custom-cursor-img {
   opacity: 0 !important;
   transition: opacity 0.5s ease !important;
 }
