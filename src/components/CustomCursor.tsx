@@ -1,13 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { useTheme } from './ThemeContext';
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLImageElement>(null);
-  const pathname = usePathname();
-  const { theme } = useTheme();
+  const cursorRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,49 +18,23 @@ export default function CustomCursor() {
 
     // Track mouse coordinates
     const handleMouseMove = (e: MouseEvent) => {
-      // Offset by half the width/height if you want it centered, 
-      // or 0 if it's a pointer cursor pointing from top-left.
-      // Usually custom image cursors point from top-left.
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Event delegation for hover states
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      if (target && target.closest('.interactive')) {
-        cursor.classList.add('hovered');
-      } else {
-        cursor.classList.remove('hovered');
-      }
-    };
-
-    document.addEventListener('mouseover', handleMouseOver);
-
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseover', handleMouseOver);
     };
   }, [mounted]);
-
-  // Reset cursor hover state whenever the path changes to prevent sticky states
-  useEffect(() => {
-    const cursor = cursorRef.current;
-    if (cursor) {
-      cursor.classList.remove('hovered');
-    }
-  }, [pathname]);
 
   if (!mounted) return null;
 
   return (
-    <img
-      src={theme === 'light' ? '/assets/cursor-blue.png' : '/assets/cursor-purple.png'}
-      alt="Custom Cursor"
-      className="custom-cursor-img"
-      ref={cursorRef}
-    />
+    <div className="custom-arrow-cursor" ref={cursorRef}>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 2L10.5 21.5L14 14L21.5 10.5L4 2Z" fill="currentColor" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
+      </svg>
+    </div>
   );
 }

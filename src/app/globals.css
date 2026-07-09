@@ -164,19 +164,21 @@ body {
   background: #444;
 }
 
-/* Custom Interactive Cursor Image */
-.custom-cursor-img {
-  width: 32px;
+/* Custom Interactive Arrow Cursor */
+.custom-arrow-cursor {
   position: fixed;
+  top: 0;
+  left: 0;
   pointer-events: none;
   z-index: 100000000;
-  /* Pointer cursors usually have their hot spot at the top left, so we don't translate it */
+  color: #a855f7; /* Dark mode purple */
+  transition: transform 0.1s ease-out;
   transform: translate(0, 0);
-  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  /* Remove mix-blend-mode for a solid color cursor */
 }
 
-.custom-cursor-img.hovered {
-  transform: scale(1.2);
+[data-theme="light"] .custom-arrow-cursor {
+  color: #0ea5e9; /* Light mode blue */
 }
 
 /* Custom Cursor Auto-Hide when Mouse is Inactive during Playback */
@@ -185,7 +187,7 @@ body.hide-cursor * {
   cursor: none !important;
 }
 
-body.hide-cursor .custom-cursor-img {
+body.hide-cursor .custom-arrow-cursor {
   opacity: 0 !important;
   transition: opacity 0.5s ease !important;
 }
@@ -1113,7 +1115,7 @@ body.video-modal-open header {
   }
   
   /* Reset custom cursor for touch screens */
-  .custom-cursor, .custom-cursor-dot {
+  .custom-arrow-cursor {
     display: none !important;
   }
   * {
